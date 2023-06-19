@@ -19,6 +19,7 @@ else
 echo "$host" > /root/domain
 echo "$host" > /root/scdomain
 echo "$host" > /etc/xray/domain
+echo "$host" > /etc/v2ray/domain
 echo "$host" > /etc/xray/scdomain
 echo "IP=$host" > /var/lib/ipvps.conf
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
