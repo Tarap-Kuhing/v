@@ -277,6 +277,8 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
+wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
+wget -O update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/update.sh"
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
@@ -339,6 +341,8 @@ wget -O trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xra
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
+chmod +x menu-update
+chmod +x update
 chmod +x menu
 chmod +x m-bot
 chmod +x m-ip
