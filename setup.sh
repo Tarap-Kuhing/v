@@ -144,12 +144,13 @@ yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
 echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
 echo ""
-echo -e "   .----------------------------------."
-echo -e "   |\e[1;32mPlease select a domain type below \e[0m|"
-echo -e "   '----------------------------------'"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Please select a domain type below               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "     \e[1;32m1)\e[0m Enter your Subdomain"
 echo -e "     \e[1;32m2)\e[0m Use a random Subdomain"
-echo -e "   ------------------------------------"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
@@ -320,7 +321,7 @@ rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
-echo -e "
-"
-read -n 1 -s -r -p "Press any key to reboot"
-reboot
+echo -e ""
+echo "===============-[ INSTALL SSH UDP & REBOOT ]-==============="
+sleep 3
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2" -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
