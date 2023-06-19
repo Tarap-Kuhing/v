@@ -244,11 +244,11 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -s https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
+export sem=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
-export Name=$(curl -s https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
-export Exp=$(curl -s https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
+export aku=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
+export masa=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
 clear
 clear
 clear
@@ -303,9 +303,9 @@ echo -e "${BICyan} ┌───────────────────�
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version      ${NC} : v1. Last Update"
-echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
-echo -e " ${BICyan}│  Day Expired${NC}   : $Exp"
+echo -e " ${BICyan}│  Version      ${NC} : $sem Last Update"
+echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $aku \e[0m"
+echo -e " ${BICyan}│  Day Expired${NC}   : $masa"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
