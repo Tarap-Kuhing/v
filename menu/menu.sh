@@ -287,10 +287,10 @@ echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SETING  ${BICyan}[${BIYellow}Menu
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan}                  MENU TAMBAHAN${NC} "
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "     ${BICyan}[${BIWhite}11${BICyan}] DOMAIN FREE${NC} "
-echo -e "     ${BICyan}[${BIWhite}12${BICyan}] BOT TELEGRAM${NC} "
-echo -e "     ${BICyan}[${BIWhite}13${BICyan}] REGISTRASI IPVPS BARU${NC} "
+echo -e "     ${BICyan}[${BIWhite}11${BICyan}] BOT TELEGRAM${NC} "
+echo -e "     ${BICyan}[${BIWhite}12${BICyan}] REGISTRASI IPVPS BARU${NC} "
 echo -e "     ${BICyan}[${BIWhite}99${BICyan}] CLEAR SAMPAH${NC} "
+echo -e "     ${BICyan}[${BIWhite}11${BICyan}] UPDATE SCRIPT ${BICyan}[${BIYellow}TKT${BICyan}]${NC} "
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
@@ -314,11 +314,10 @@ case $opt in
 8) clear ; addhost ;;
 9) clear ; running ;;
 10) clear ; jam ;;
-11) clear ; cf ;;
-12) clear ; m-bot ;;
-13) clear ; m-ip ;;
-99) clear ; clearcache ;;
-6969) clear ; wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/update.sh && chmod +x update.sh && ./update.sh && rm -f /root/update.sh ;;
+11) clear ; m-bot ;;
+12) clear ; m-ip ;;
+13) clear ; clearcache ;;
+14) clear ; update ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
