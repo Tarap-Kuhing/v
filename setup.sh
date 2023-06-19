@@ -128,6 +128,8 @@ mkdir -p /etc/dns
 mkdir -p /etc/slowdns
 touch /etc/slowdns/server.pub
 touch /etc/slowdns/server.key
+mkdir -p /etc/kuhing
+mkdir -p /etc/kuhing/theme
 mkdir -p /var/lib >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 
@@ -158,7 +160,7 @@ echo "IP=$pp" > /var/lib/ipvps.conf
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/kubing.sh && chmod +x kuhing.sh && ./kuhing.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/kuhing.sh && chmod +x kuhing.sh && ./kuhing.sh
 rm -f /root/kuhing.sh
 clear
 else
@@ -167,7 +169,34 @@ wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/kuhin
 rm -f /root/kuhing.sh
 clear
 fi
-    
+cat <<EOF>> /etc/kuhing/theme/red
+BG : \E[40;1;41m
+TEXT : \033[0;31m
+EOF
+cat <<EOF>> /etc/kuhing/theme/green
+BG : \E[40;1;42m
+TEXT : \033[0;32m
+EOF
+cat <<EOF>> /etc/kuhing/theme/yellow
+BG : \E[40;1;43m
+TEXT : \033[0;33m
+EOF
+cat <<EOF>> /etc/kuhing/theme/blue
+BG : \E[40;1;44m
+TEXT : \033[0;34m
+EOF
+cat <<EOF>> /etc/kuhing/theme/magenta
+BG : \E[40;1;95m
+TEXT : \033[0;95m
+EOF
+cat <<EOF>> /etc/kuhing/theme/cyan
+BG : \E[40;1;46m
+TEXT : \033[0;36m
+EOF
+cat <<EOF>> /etc/kuhing/theme/color.conf
+magenta
+EOF
+
 #install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install SSH / WS               $NC"
@@ -184,7 +213,7 @@ function pasang_backup() {
 
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green          Install XRAY              $NC"
+echo -e "$green       Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
@@ -196,6 +225,13 @@ clear
 sleep 3
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing && chmod +x kuhing && ./kuhing
 clear
+#install ssh ovpn
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install OHP               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
