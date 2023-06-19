@@ -300,7 +300,7 @@ echo -e " ${BICyan}│  Version      ${NC} : v1. Last Update"
 echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
 echo -e " ${BICyan}│  Day Expired${NC}   : $Exp"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
-echo""
+echo -e ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
@@ -318,7 +318,7 @@ case $opt in
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
 14) clear ; update ;;
-14) clear ; menu-update ;;
+15) clear ; menu-update ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
