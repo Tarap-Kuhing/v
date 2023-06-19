@@ -130,6 +130,8 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/nginx.conf"
 mkdir -p /home/vps/public_html
+rm /etc/nginx/conf.d/vps.conf
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
@@ -209,7 +211,11 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
+#OpenVPN
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/OPENVPN/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
+# // install lolcat
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 # install fail2ban
 apt -y install fail2ban
 
