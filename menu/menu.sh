@@ -193,11 +193,11 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
-function addhost(){
+function addhost-slwdns(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-read -rp "Domain/Host: " -e host
+read -rp "Masukan Nameserver Slowdns: " -e host
 echo ""
 if [ -z $host ]; then
 echo "????"
@@ -205,9 +205,10 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 read -n 1 -s -r -p "Press any key to back on menu"
 setting-menu
 else
+echo "$host" > /etc/xray/dns
 echo "IP=$host" > /var/lib/ipvps.conf
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo "Dont forget to renew cert"
+echo "Dont forget to menu"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
@@ -216,7 +217,8 @@ fi
 function genssl(){
 clear
 systemctl stop nginx
-domain=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
+domain=$(cat /etc/xray/domain | cut -d'=' -f2)
+domain=$(cat /etc/v2ray/domain | cut -d'=' -f2)
 Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
 if [[ ! -z "$Cek" ]]; then
 sleep 1
@@ -288,7 +290,7 @@ echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $res
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"    "     ${BICyan}[${BIWhite}06${BICyan}] TRIALL    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │"
 echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}07${BICyan}] BACKUP    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │"
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}08${BICyan}] ADD-HOST      ${NC}" "${BICyan}     │"
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}08${BICyan}] RENEW NS SLOWDNS      ${NC}" "${BICyan}     │"
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}09${BICyan}] RUNNING             │"
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SETING  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}10${BICyan}] SET REBOOT${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
@@ -318,7 +320,7 @@ case $opt in
 5) clear ; menu-set ;;
 6) clear ; menu-trial ;;
 7) clear ; menu-backup ;;
-8) clear ; addhost ;;
+8) clear ; addhost-slwdns ;;
 9) clear ; running ;;
 10) clear ; jam ;;
 11) clear ; m-bot ;;
