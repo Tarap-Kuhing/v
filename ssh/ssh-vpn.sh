@@ -277,9 +277,11 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 # menu
+wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
 
+chmod +x menu
 chmod +x m-bot
 chmod +x m-ip
 cd
