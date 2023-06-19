@@ -247,8 +247,8 @@ menu
 export sem=$( curl -s https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
-export Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
-export Exp=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
+export Name=$(curl -s https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps)
+export Exp=$(curl -s https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps)
 clear
 clear
 clear
