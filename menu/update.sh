@@ -128,6 +128,10 @@ wget -q -O /usr/bin/ m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/mai
 
 wget -q -O /usr/bin/ m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
 
+wget -q -O /usr/bin/ update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/update.sh" && chmod +x /usr/bin/update
+
+wget -q -O /usr/bin/ menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh" && chmod +x /usr/bin/menu-update
+
 echo -e " [INFO] Update Successfully"
 sleep 2
 exit
