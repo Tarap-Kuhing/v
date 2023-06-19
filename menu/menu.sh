@@ -321,8 +321,8 @@ case $opt in
 11) clear ; m-bot ;;
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
-14) clear ; update ;;
-15) clear ; menu-update ;;
+14) clear ; menu-update ;;
+15) clear ; update ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
