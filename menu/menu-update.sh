@@ -1,16 +1,6 @@
 #!/bin/bash
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-###########- COLOR CODE -##############
-colornow=$(cat /etc/tarap/theme/color.conf)
-export NC="\e[0m"
-export YELLOW='\033[0;33m';
-export RED="\033[0;31m"
-export COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-export COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
-WH='\033[1;37m'
-###########- END COLOR CODE -##########
-
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -99,27 +89,6 @@ sts="${Info2}"
 else
 sts="${Error}"
 fi
-clear
-echo ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$back_text                 \e[30m[\e[$box CHECK NEW UPDATE\e[30m ]                   \e[m"
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$below VERSION NOW >> $Info1"
-echo -e "   \e[$below STATUS UPDATE >> $sts"
-echo -e ""
-echo -e "       \e[1;31mWould you like to proceed?\e[0m"
-echo ""
-echo -e "            \e[0;32m[ Select Option ]\033[0m"
-echo -e "     \e[$number [1]\e[m \e[$below Script Update Now\e[m"
-echo -e "     \e[$number [x]\e[m \e[$below Back To Update Menu\e[m"
-echo -e "     \e[$number [y]\e[m \e[$below Back To Main Menu\e[m"
-echo -e ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "\e[$line"
-read -p "Please Choose 1 or x & y : " option2
-case $option2 in
-1)
-
 clear
 echo -e "\e[1;31mUpdate Available Now..\e[m"
 echo -e ""
@@ -215,15 +184,78 @@ clear
 echo ""
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
+rm -rf menu
+rm -rf m-bot
+rm -rf menu-trial
+rm -rf menu-vmess
+rm -rf menu-vless
+rm -rf running
+rm -rf clearcache
+rm -rf menu-trgo
+rm -rf menu-trojan
+rm -rf menu-ssh
+rm -rf usernew
+rm -rf trial
+rm -rf renew
+rm -rf hapus
+rm -rf cek
+rm -rf member
+rm -rf delete
+rm -rf autokill
+rm -rf ceklim
+rm -rf tendang
+rm -rf menu-set
+rm -rf menu-domain
+rm -rf add-host
+rm -rf port-change
+rm -rf certv2ray
+rm -rf menu-webmin
+rm -rf speedtest
+rm -rf about
+rm -rf auto-reboot
+rm -rf restart
+rm -rf bw
+rm -rf port-ssl
+rm -rf port-ovpn
+rm -rf xp
+rm -rf acs-set
+rm -rf sshws
+rm -rf status
+rm -rf menu-bckp
+rm -rf backup
+rm -rf restore
+rm -rf jam
+rm -rf add-ws
+rm -rf trialvmess
+rm -rf renew-ws
+rm -rf del-ws
+rm -rf cek-ws
+rm -rf add-vless
+rm -rf trialvless
+rm -rf renew-vless
+rm -rf del-vless
+rm -rf cek-vless
+rm -rf add-tr
+rm -rf trialtrojan
+rm -rf del-tr
+rm -rf renew-tr
+rm -rf cek-tr
+rm -rf addtrgo
+rm -rf trialtrojango
+rm -rf deltrgo
+rm -rf renewtrgo
+rm -rf cektrgo
+
 cd /usr/bin
-wget -q -O /usr/bin/ menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh" && chmod +x /usr/bin/menu
-wget -q -O /usr/bin/ menu-trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh" && chmod +x /usr/bin/menu-trial
-wget -q -O /usr/bin/ menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh" && chmod +x /usr/bin/menu-vmess
-wget -q -O /usr/bin/ menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh" && chmod +x /usr/bin/menu-vless
-wget -q -O /usr/bin/ running "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/running.sh" && chmod +x /usr/bin/running
-wget -q -O /usr/bin/ clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/clearcache.sh" && chmod +x /usr/bin/clearcache
-wget -q -O /usr/bin/ menu-trgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh" && chmod +x /usr/bin/menu-trgo
-wget -q -O /usr/bin/ menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trojan.sh" && chmod +x /usr/bin/menu-trojan
+wget -O /usr/bin/ menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -O /usr/bin/ m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
+wget -O /usr/bin/ menu-trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh" && chmod +x /usr/bin/menu-trial
+wget -O /usr/bin/ menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh" && chmod +x /usr/bin/menu-vmess
+wget -O /usr/bin/ menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh" && chmod +x /usr/bin/menu-vless
+wget -O /usr/bin/ running "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/running.sh" && chmod +x /usr/bin/running
+wget -O /usr/bin/ clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/clearcache.sh" && chmod +x /usr/bin/clearcache
+wget -O /usr/bin/ menu-trgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh" && chmod +x /usr/bin/menu-trgo
+wget -O /usr/bin/ menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trojan.sh" && chmod +x /usr/bin/menu-trojan
 wget -O /usr/bin/ menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssh.sh" && chmod +x /usr/bin/menu-ssh
 wget -O /usr/bin/ usernew "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/usernew.sh" && chmod +x /usr/bin/usernew
 wget -O /usr/bin/ trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/trial.sh" && chmod +x /usr/bin/trial
@@ -276,84 +308,72 @@ wget -O /usr/bin/ trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/
 wget -O /usr/bin/ deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh" && chmod +x /usr/bin/deltrgo
 wget -O /usr/bin/ renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh" && chmod +x /usr/bin/renewtrgo
 wget -O /usr/bin/ cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh" && chmod +x /usr/bin/cektrgo
-chmod +x tes
-chmod +x addip
-chmod +x add-host
 chmod +x menu
-chmod +x add-ssh
+chmod +x m-bot
+chmod +x menu-trial
+chmod +x menu-vmess
+chmod +x menu-vless
+chmod +x running
+chmod +x clearcache
+chmod +x menu-trgo
+chmod +x menu-trojan
+chmod +x menu-ssh
+chmod +x usernew
 chmod +x trial
-chmod +x maxisdigi
-chmod +x del-ssh
+chmod +x renew
+chmod +x hapus
+chmod +x cek
 chmod +x member
 chmod +x delete
-chmod +x cek-ssh
-chmod +x restart
+chmod +x autokill
+chmod +x ceklim
+chmod +x tendang
+chmod +x menu-set
+chmod +x menu-domain
+chmod +x add-host
+chmod +x port-change
+chmod +x certv2ray
+chmod +x menu-webmin
 chmod +x speedtest
 chmod +x about
-chmod +x autokill
-chmod +x tendang
-chmod +x ceklim
-chmod +x ram
-chmod +x renew-ssh
-chmod +x clear-log
-chmod +x change-port
-chmod +x restore
-chmod +x port-ovpn
+chmod +x auto-reboot
+chmod +x restart
+chmod +x bw
 chmod +x port-ssl
-chmod +x port-squid
-chmod +x port-websocket
-chmod +x wbmn
+chmod +x port-ovpn
 chmod +x xp
-chmod +x kernel-updt
-chmod +x user-list
-chmod +x user-lock
-chmod +x user-unlock
-chmod +x user-password
-chmod +x antitorrent
-chmod +x cfa
-chmod +x cfd
-chmod +x cfp
-chmod +x swap
-chmod +x check-sc
-chmod +x ssh
-chmod +x autoreboot
-chmod +x bbr
-chmod +x port-ohp
-chmod +x rclone
-chmod +x panel-domain
-chmod +x dns
-chmod +x nf
-
-chmod +x update
-chmod +x run-update
-chmod +x message-ssh
-chmod +x change-port
-chmod +x system
-chmod +x menu
-chmod +x add-host
-chmod +x check-sc
-chmod +x cert
-chmod +x trojaan
-chmod +x xraay
-chmod +x xp
-chmod +x port-xray
-chmod +x themes
-chmod +x autobackup
+chmod +x acs-set
+chmod +x sshws
+chmod +x status
+chmod +x menu-bckp
 chmod +x backup
-chmod +x bckp
 chmod +x restore
-chmod +x ins-xray
-chmod +x running
-chmod +x m-backup
-chmod +x vmess
-chmod +x vless
-chmod +x api
-chmod +x bot
+chmod +x jam
+chmod +x add-ws
+chmod +x trialvmess
+chmod +x renew-ws
+chmod +x del-ws
+chmod +x cek-ws
+chmod +x add-vless
+chmod +x trialvless
+chmod +x renew-vless
+chmod +x del-vless
+chmod +x cek-vless
+chmod +x add-tr
+chmod +x trialtrojan
+chmod +x del-tr
+chmod +x renew-tr
+chmod +x cek-tr
+chmod +x addtrgo
+chmod +x trialtrojango
+chmod +x deltrgo
+chmod +x renewtrgo
+chmod +x cektrgo
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/multiport/main/versi )
+ver=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi )
 sleep 1
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
 echo ""
@@ -386,6 +406,6 @@ menu
 clear
 echo -e "\e[1;31mPlease Enter Option 1-2 or x & y Only..,Try again, Thank You..\e[0m"
 sleep 2
-run-update
+menu-update
 ;;
 esac
