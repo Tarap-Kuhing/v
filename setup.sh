@@ -138,6 +138,8 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x 
 rm tools.sh
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api;chmod +x api;./api
+clear
+clear
 yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
 echo -e "\e[1;32m════════════════════════════════════════════════════════════\e[0m"
