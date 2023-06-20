@@ -94,7 +94,7 @@ start
 fi
 email=$(cat /home/email)
 echo -e "
-Ini adalah isi email percobaaan kirim email dari vps
+Ini adalah isi email percobaaan dari script tarap kuhing tunneling kirim email dari vps kamu
 IP VPS : $IP
 Tanggal : $date
 " | mail -s "Percobaan Pengiriman Email" $email
