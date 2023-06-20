@@ -3,6 +3,51 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
+BURIQ () {
+    curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps > /root/tmp
+    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
+    for user in "${data[@]}"
+    do
+    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
+    d1=(`date -d "$exp" +%s`)
+    d2=(`date -d "$biji" +%s`)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" -le "0" ]]; then
+    echo $user > /etc/.$user.ini
+    else
+    rm -f  /etc/.$user.ini > /dev/null 2>&1
+    fi
+    done
+    rm -f  /root/tmp
+}
+# https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps 
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
+
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+        res="Expired"
+    fi
+else
+res="Permission Accepted..."
+fi
+}
+
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    Bloman
+    else
+    res="Permission Denied!"
+    fi
+    BURIQ
+}
+
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -31,14 +76,7 @@ dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
 if [[ "$hst" != "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
 fi
-
 mkdir -p /etc/xray
-mkdir -p /etc/v2ray
-touch /etc/xray/domain
-touch /etc/v2ray/domain
-touch /etc/xray/scdomain
-touch /etc/v2ray/scdomain
-
 
 echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
 sleep 1
@@ -46,50 +84,6 @@ echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Checking headers"
 sleep 1
-totet=`uname -r`
-REQUIRED_PKG="linux-headers-$totet"
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
-echo Checking for $REQUIRED_PKG: $PKG_OK
-if [ "" = "$PKG_OK" ]; then
-  sleep 2
-  echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
-  echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
-  apt-get --yes install $REQUIRED_PKG
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 1. apt update -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 2. apt upgrade -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 3. apt dist-upgrade -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 4. reboot"
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-  echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now"
-  read
-else
-  echo -e "[ ${green}INFO${NC} ] Oke installed"
-fi
-
-ttet=`uname -r`
-ReqPKG="linux-headers-$ttet"
-if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
-  rm /root/setup.sh >/dev/null 2>&1 
-  exit
-else
-  clear
-fi
-
 
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
@@ -117,10 +111,32 @@ chmod 644 /root/.profile
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
+echo -e "[ ${green}INFO${NC} ] Alright good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
+
+PERMISSION
+if [ -f /home/needupdate ]; then
+red "Your script need to update first !"
+exit 0
+elif [ "$res" = "Permission Accepted..." ]; then
+green "Permission Accepted!"
+else
+red "Permission Denied!"
+rm setup.sh > /dev/null 2>&1
+sleep 2
+exit 0
+fi
+sleep 2
 rm -rf /etc/per
+mkdir -p /etc/xray
+mkdir -p /etc/v2ray
+touch /etc/xray/domain
+touch /etc/v2ray/domain
+touch /etc/xray/scdomain
+touch /etc/v2ray/scdomain
+touch /etc/xray/city
+touch /etc/xray/isp
 mkdir -p /etc/per
 touch /etc/per/id
 touch /etc/per/token
@@ -271,6 +287,42 @@ gg="PM"
 else
 gg="AM"
 fi
+curl -sS ifconfig.me > /etc/myipvps
+curl -s ipinfo.io/city?token=75082b4831f909 >> /etc/xray/city
+curl -s ipinfo.io/org?token=75082b4831f909  | cut -d " " -f 2-10 >> /etc/xray/isp
+IP=$(echo $SSH_CLIENT | awk '{print $1}')
+TMPFILE='/tmp/ipinfo-$DATE_EXEC.txt'
+curl http://ipinfo.io/$IP -s -o $TMPFILE
+ORG=$(cat $TMPFILE | jq '.org' | sed 's/"//g')
+domain=$(cat /etc/xray/domain)
+LocalVersion=$(cat /root/versi)
+IPVPS=$(curl -s ipinfo.io/ip )
+ISPVPS=$( curl -s ipinfo.io/org )
+Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
+domain=$(cat /etc/xray/domain) 
+ttoday="$(vnstat | grep today | awk '{print $8" "substr ($9, 1, 3)}' | head -1)"
+tmon="$(vnstat -m | grep `date +%G-%m` | awk '{print $8" "substr ($9, 1 ,3)}' | head -1)"
+DATE_EXEC="$(date "+%d %b %Y %H:%M")"
+REGION=$(cat $TMPFILE | jq '.region' | sed 's/"//g')
+COUNTRY=$(cat $TMPFILE | jq '.country' | sed 's/"//g')
+Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+message="
+<code>◇━━━━━━━━━━━━━━◇</code>
+<u>⚠️ AUTOSCRIPT INSTALLER ⚠️</b>
+<u>⚠️ TARAP KUHING TUNNELING ⚠️</b>
+<code>◇━━━━━━━━━━━━━━◇</code>
+<code>DOMAIN     : </code><code>${domain}</code>
+<code>LINUX      : </code><code>${MYIP}</code>
+<code>ISP        : </code><code>${ISP}, ${CITY}</code>
+</code>AUTHOR    : </code><code>${Name}</code>
+</code>EXP SCRIPT: </code><code>${Exp}</code>
+<code>◇━━━━━━━━━━━━━━◇</code>
+"
+curl -s -X POST "https://api.telegram.org/bot6208240566:AAFINY02Hij6uwZo1rbgSLoyb4qBeT4p7RA/sendmessage" \
+-d "chat_id=847645599" -d "parse_mode=html" -d "text=$message" >/dev/null 2>&1
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
 echo "=====================-[ SCRIPT TARAP KUHING ]-===================="
