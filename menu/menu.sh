@@ -235,16 +235,15 @@ export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
 echo -e "                         ${BIWhite}${UWhite}About${NC}"
-echo -e "                 ${BICyan}Base Script : ${BIPurple}Horassss${NC}"
-echo -e "                 ${BICyan}Bot Dev     : ${BIPurple}@xolvadev${NC}"
-echo -e "                 ${BICyan}Decodec     :${BIPurple} @boootzzzz${NC}"
+echo -e "                  ${BICyan}Base Script : ${BIPurple}TKT ( TARAP KUHING )${NC}"
 echo -e "               ${BICyan}${On_IPurple} SCRIPT MULTI PORT ${UWhite}${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}Server Informations${NC}"
 echo -e "${BICyan} │"
-echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${BIPurple}XRAY${NC}"
-echo -e " ${BICyan}│  ${BICyan}Current Domain  :  ${BIPurple}$(cat /etc/xray/domain)${NC}"
-echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS${NC}"
+echo -e " ${BICyan}│  ${BICyan}Use Core         :  ${BIPurple}XRAY${NC}"
+echo -e " ${BICyan}│  ${BICyan}Domain           :  ${BIPurple}$(cat /etc/xray/domain)${NC}"
+echo -e " ${BICyan}│  ${BICyan}NS Slowdns Domain:  ${BIPurple}$(cat /etc/xray/domain)${NC}"
+echo -e " ${BICyan}│  ${BICyan}IP-VPS           :  ${BIYellow}$IPVPS${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
@@ -280,8 +279,7 @@ case $opt in
 7) clear ; menu-bckp ;;
 8) clear ; add-host ;;
 9) clear ; certv2ray ;;
-10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
-6969) clear ; wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/update.sh && chmod +x update.sh && ./update.sh && rm -f /root/update.sh ;;
+10) clear ; menu-update ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
