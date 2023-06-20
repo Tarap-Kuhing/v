@@ -54,7 +54,7 @@ comp-lzo
 verb 3
 
 setenv FRIENDLY_NAME "Ovpn Tcp"
-http-proxy ${domain} 8080
+http-proxy ${domain} 8181
 http-proxy-option CUSTOM-HEADER CONNECT HTTP/1.1
 http-proxy-option CUSTOM-HEADER Host bug.com
 http-proxy-option CUSTOM-HEADER X-Online-Host bug.com
