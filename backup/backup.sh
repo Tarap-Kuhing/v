@@ -37,7 +37,7 @@ cp /etc/group backup/
 cp /etc/shadow backup/
 cp /etc/gshadow backup/
 cp /etc/crontab backup/
-cp -r /var/lib/geovpn/ backup/geovpn
+cp -r /var/lib backup/
 cp -r /etc/xray backup/xray
 cp -r /var/www/html/ backup/html
 cd /root
