@@ -65,7 +65,7 @@ TEXT="
 <code>-----------------------</code>
 <code>      Detail Backup </code>
 <code>-----------------------</code>
-<code>DOMAIN    : ${domain}</code>
+<code>DOMAIN     : ${domain}</code>
 <code>-----------------------</code>
 <code>IP VPS     : ${IP}</code>
 <code>-----------------------</code>
@@ -88,3 +88,5 @@ Tanggal       : $date
 "
 echo "Silahkan copy Link dan restore di VPS baru"
 echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
