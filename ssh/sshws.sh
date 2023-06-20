@@ -19,7 +19,7 @@ Documentation=bahenol
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ssh-wsenabler
+ExecStart=/usr/bin/sshws-service
 KillMode=process
 Restart=on-failure
 RestartSec=1s
@@ -38,7 +38,7 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
 echo "Already ON !"
 else
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
+wget -q -O /usr/bin/sshws-service "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/sshws-true.sh" && chmod +x /usr/bin/sshws-service && /usr/bin/sshws-service
 systemctl daemon-reload >/dev/null 2>&1
 systemctl enable sshws.service >/dev/null 2>&1
 systemctl start sshws.service >/dev/null 2>&1
