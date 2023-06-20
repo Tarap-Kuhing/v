@@ -110,7 +110,6 @@ chmod 644 /root/.profile
 
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
-apt install python -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Alright good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
@@ -148,13 +147,16 @@ mkdir -p /etc/kuhing
 mkdir -p /etc/kuhing/theme
 mkdir -p /var/lib >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
-
+clear
 echo ""
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x tools.sh;./tools.sh
-rm tools.sh
-clear
+#wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x tools.sh;./tools.sh
+#rm tools.sh
+#clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api;chmod +x api;./api
+rm api
 clear
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing;chmod +x kuhing;./kuhing
+rm kuhing
 clear
 yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
@@ -174,18 +176,19 @@ read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
+echo "$pp" > /etc/v2ray/domain
 echo "$pp" > /etc/xray/scdomain
 echo "IP=$pp" > /var/lib/ipvps.conf
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/kuhing.sh && chmod +x kuhing.sh && ./kuhing.sh
-rm -f /root/kuhing.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+rm -f /root/cf.sh
 clear
 else
 echo -e "Random Subdomain/Domain is used"
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/tarong/SSH/kuhing.sh && chmod +x kuhing.sh && ./kuhing.sh
-rm -f /root/kuhing.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+rm -f /root/cf.sh
 clear
 fi
 cat <<EOF>> /etc/kuhing/theme/red
@@ -223,13 +226,13 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
-### Pasang Rclone
-function pasang_backup() {
-    judge "Memasang backup server"
-    wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh >/dev/null 2>&1
-    print_success "backup server"
-}
-
+#install Backup
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install BACKUP           $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green       Install XRAY              $NC"
@@ -238,14 +241,24 @@ sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
+#install file
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install FILE                $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+clear
+#install slowdns
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install SLOWDNS                $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 clear
-sleep 3
-wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing && chmod +x kuhing && ./kuhing
-clear
-#install ssh ovpn
+sleep 2
+#install ssh ohp
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green       Install OHP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -278,7 +291,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
+serverV=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
