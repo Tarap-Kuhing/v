@@ -164,6 +164,7 @@ rm -rf deltrgo
 rm -rf renewtrgo
 rm -rf cektrgo
 rm -rf m-sshovpn
+rm -rf cf
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -230,7 +231,7 @@ wget -O trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xra
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
-wget -O m-sshovpn "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/menu/m-sshovpn.sh"
+wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
 
 chmod +x menu-update
 chmod +x update
@@ -296,7 +297,7 @@ chmod +x trialtrojango
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
-chmod +x m-sshovpn
+chmod +x cf
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
