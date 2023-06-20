@@ -198,23 +198,23 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[44;1;39m                     ⇱ INFORMASI VPS ⇲                        \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
-echo -e "${BIYellow}□ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
-echo -e "${BIYellow}□ Current Time        = ${GREEN}$( date -d "0 days" +"%d-%m-%Y | %X" )${NC}"
-echo -e "${BIYellow}□ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
-echo -e "${BIYellow}□ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
-echo -e "${BIYellow}□ NS Domain           = ${GREEN}$( cat /etc/xray/dns )${NC}"
-echo -e "${BIYellow}□ Jumlah Ram          = ${GREEN}${totalram}MB"
-echo -e "${BIYellow}□ CPU Usage           = $cpu_usage"
-echo -e "${BIYellow}□ Clients Name        = ${GREEN}${Name}${NC}"
-echo -e "${BIYellow}□ Expired Script VPS  = ${GREEN}${Exp}${NC}"
-echo -e "${BIYellow}□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
-echo -e "${BIYellow}□ WHATSAPP            = { 085754292950 }${NC}"
-echo -e "${BIYellow}□ AutoScript By T.K.T = ${GREEN}( TARAP KUHING TUNNELING)${NC}"
+echo -e "${BIYellow}□ Server Uptime       = ${UWhite}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
+echo -e "${BIYellow}□ Current Time        = ${BIRed}$( date -d "0 days" +"%d-%m-%Y | %X" )${NC}"
+echo -e "${BIYellow}□ Operating System    = ${UWhite}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
+echo -e "${BIYellow}□ Current Domain      = ${BIRed}$( cat /etc/xray/domain )${NC}"
+echo -e "${BIYellow}□ NS Domain           = ${UWhite}$( cat /etc/xray/dns )${NC}"
+echo -e "${BIYellow}□ Jumlah Ram          = ${BIRed}${totalram}MB"
+echo -e "${BIYellow}□ CPU Usage           = ${UWhite}$cpu_usage"
+echo -e "${BIYellow}□ Clients Name        = ${BIRed}${Name}${NC}"
+echo -e "${BIYellow}□ Expired Script VPS  = ${BIWhite}${Exp}${NC}"
+echo -e "${BIYellow}□ Time Reboot VPS     = ${BIRed}00:00 ${GREEN}( Jam 12 Malam )${NC}"
+echo -e "${BIYellow}□ WHATSAPP            = ${UWhite}{ 085754292950 }${NC}"
+echo -e "${BIYellow}□ AutoScript By T.K.T = ${BIRed}( TARAP KUHING TUNNELING )${NC}"
 
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}TARAP KUHING TUNELING${NC}"
 echo -e "${BICyan} │"
-echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${BIPurple}XRAY${NC}"
+echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${IPurple}XRAY${NC}"
 echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 
@@ -247,7 +247,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}│  Version      ${NC} : ${sem} Last Update"
 echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m ${Name} \e[0m"
-echo -e " ${BICyan}│  Day Expired${NC}   : ${Exp}"
+echo -e " ${BICyan}│  Day Expired${NC}   :\033[1;91m ${Exp} \e[0m"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
@@ -267,7 +267,6 @@ case $opt in
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
-15) clear ; m-sshovpn ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
