@@ -246,11 +246,9 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
+export sem=$( curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi )
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
-export aku=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
-export masa=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
 clear
 clear
 clear
@@ -265,8 +263,8 @@ echo -e "${BIYellow}□ Current Domain      = ${GREEN}$( cat /etc/xray/domain )$
 echo -e "${BIYellow}□ NS Domain           = ${GREEN}$( cat /etc/xray/dns )${NC}"
 echo -e "${BIYellow}□ Jumlah Ram          = ${GREEN}${totalram}MB"
 echo -e "${BIYellow}□ CPU Usage           = $cpu_usage"
-echo -e "${BIYellow}□ Clients Name        = ${GREEN}$Name${NC}"
-echo -e "${BIYellow}□ Expired Script VPS  = ${GREEN}$Exp${NC}"
+echo -e "${BIYellow}□ Clients Name        = ${GREEN}${Name}${NC}"
+echo -e "${BIYellow}□ Expired Script VPS  = ${GREEN}${Exp}${NC}"
 echo -e "${BIYellow}□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
 echo -e "${BIYellow}□ WHATSAPP            = { 085754292950 }${NC}"
 echo -e "${BIYellow}□ AutoScript By TKT   = ${GREEN}( TARAP KUHING TUNNELING)${NC}"
@@ -305,9 +303,9 @@ echo -e "${BICyan} ┌───────────────────�
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version      ${NC} : $sem Last Update"
-echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $aku \e[0m"
-echo -e " ${BICyan}│  Day Expired${NC}   : $masa"
+echo -e " ${BICyan}│  Version      ${NC} : ${sem} Last Update"
+echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m ${Name} \e[0m"
+echo -e " ${BICyan}│  Day Expired${NC}   : ${Exp}"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
@@ -327,7 +325,7 @@ case $opt in
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
-15) clear ; update ;;
+15) clear ; m-sshovpn ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
