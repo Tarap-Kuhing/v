@@ -39,6 +39,9 @@ cp /etc/gshadow backup/
 cp /etc/crontab backup/
 cp -r /var/lib backup/
 cp -r /etc/xray backup/xray
+cp -r /etc/slowdns backup/slowdns
+cp -r /etc/per/id backup/id
+cp -r /etc/per/token backup/token
 cp -r /var/www/html/ backup/html
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
