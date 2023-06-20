@@ -24,7 +24,7 @@ cp passwd /etc/
 cp group /etc/
 cp shadow /etc/
 cp gshadow /etc/
-cp -r geovpn /var/lib/
+cp -r backup /var/lib/
 cp -r xray /etc/
 cp -r html /var/www/
 cp crontab /etc/
@@ -32,3 +32,5 @@ cp crontab /etc/
 rm -rf /root/backup
 rm -f backup.zip
 echo ""
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
