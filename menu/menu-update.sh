@@ -64,7 +64,7 @@ fi
 clear
 echo ""
 version=$(cat /home/ver)
-ver=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi )
+ver=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi )
 clear
 # LINE COLOUR
 line=$(cat /etc/line)
@@ -82,7 +82,7 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
-new_version=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi | grep $version )
+new_version=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
 sts="${Info2}"
@@ -139,7 +139,7 @@ rm -rf xp
 rm -rf acs-set
 rm -rf sshws
 rm -rf status
-rm -rf menu-bckp
+rm -rf menu-backup
 rm -rf backup
 rm -rf restore
 rm -rf jam
@@ -206,7 +206,7 @@ wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/xp.sh"
 wget -O acs-set "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/acs-set.sh"
 wget -O sshws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/sshws.sh"
 wget -O status "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/status.sh"
-wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-backup.sh"
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh"
 wget -O jam "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/jam.sh"
@@ -272,7 +272,7 @@ chmod +x xp
 chmod +x acs-set
 chmod +x sshws
 chmod +x status
-chmod +x menu-bckp
+chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
@@ -301,7 +301,7 @@ clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi )
+ver=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi )
 sleep 1
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
 echo ""
