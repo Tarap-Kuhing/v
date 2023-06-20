@@ -11,10 +11,10 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-export CHATID="847645599"
-export KEY="6208240566:AAFINY02Hij6uwZo1rbgSLoyb4qBeT4p7RA"
-export TIME="10"
-export URL="https://api.telegram.org/bot$KEY/sendMessage"
+TIMES="10"
+CHATID=$(cat /etc/per/id)
+KEY=$(cat /etc/per/token)
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 domain=$(cat /etc/xray/domain)
@@ -60,10 +60,6 @@ Tanggal       : $date
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 clear
-CHATID="$CHATID"
-KEY="$KEY"
-TIME="$TIME"
-URL="$URL"
 TEXT="
 <code>-----------------------</code>
 <code>      Detail Backup </code>
