@@ -165,6 +165,7 @@ rm -rf renewtrgo
 rm -rf cektrgo
 rm -rf m-sshovpn
 rm -rf cf
+rm -rf add-vmess
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -232,6 +233,7 @@ wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/delt
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
+wget -O add-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/add-vmess.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -298,6 +300,7 @@ chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
+chmod +x add-vmess
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
