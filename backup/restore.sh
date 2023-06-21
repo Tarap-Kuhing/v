@@ -25,9 +25,12 @@ cp group /etc/
 cp shadow /etc/
 cp gshadow /etc/
 cp -r backup /var/lib/
-cp -r backup/xray /etc/xray
-cp -r backup/per /etc/per
-cp -r slowdns/backup /etc/slowdns
+#cp -r backup/xray /etc/xray
+#cp -r backup/per /etc/per
+cp -r /root/backup/per /etc/ &> /dev/null
+cp -r /root/backup/slowdns /etc/ &> /dev/null
+cp -r /root/backup/xray /etc/ &> /dev/null
+cp -r /root/backup/slowdns /etc/ &> /dev/null
 cp -r public_html/backup /etc/
 cp -r html /var/www/
 cp crontab /etc/
