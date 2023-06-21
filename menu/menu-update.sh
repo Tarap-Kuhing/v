@@ -233,7 +233,7 @@ wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/delt
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
-wget -O add-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/xray/add-vmess.sh"
+wget -O add-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-vmess.sh"
 
 chmod +x menu-update
 chmod +x update
