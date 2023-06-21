@@ -27,6 +27,8 @@ cp gshadow /etc/
 cp -r backup /var/lib/
 cp -r xray /etc/
 cp -r per /etc/
+cp -r slowdns /etc/
+cp -r public_html /etc/
 cp -r html /var/www/
 cp crontab /etc/
 
