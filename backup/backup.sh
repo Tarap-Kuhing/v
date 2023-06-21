@@ -99,7 +99,7 @@ $email
 EOF
 fi
 clear
-echo "\033[0;34m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
+echo -e "\033[0;34m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
 cp -r /root/.acme.sh /root/backup/ > /dev/null 2>&1
