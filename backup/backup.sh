@@ -111,10 +111,9 @@ cp /etc/crontab backup/
 cp /etc/cron.d backup/
 cp -r /var/lib backup/lib
 cp -r /etc/xray backup/xray
-cp -r /etc/per/id backup/per/id
-cp -r /etc/per/token backup/per/token
+cp -r /etc/per backup/per
 cp -r /etc/slowdns backup/slowdns
-cp -r /etc/nginx/conf.d backup/conf.d
+cp -r /etc/nginx backup/nginx
 cp -r /home/vps/public_html backup/public_html
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
