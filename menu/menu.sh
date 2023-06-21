@@ -57,16 +57,14 @@ Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP
 fi
 
 # =========================================
+vmc=$(grep -c -E "^#vmg " "/xray/config.json")
+# TOTAL ACC CREATE  VLESS WS
 vlx=$(grep -c -E "^#vlg " "/etc/xray/config.json")
-let vla=$vlx/2
-vmc=$(grep -c -E "^#vmg " "/etc/xray/config.json")
-let vma=$vmc/2
+# TOTAL ACC CREATE  TROJAN
+trx=$(grep -c -E "^#tr " "/etc/xray/config.json")
+# TOTAL ACC CREATE OVPN SSH
 ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 
-trx=$(grep -c -E "^#tr " "/etc/xray/config.json")
-let tra=$trx/2
-ssx=$(grep -c -E "^## " "/etc/xray/config.json")
-let ssa=$ssx/2
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
