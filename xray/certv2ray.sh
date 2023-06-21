@@ -73,7 +73,7 @@ cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
 domainlama=`cat /etc/xray/domain`
 else
-domainlama=`cat /etc/xray/domain`
+domainlama=`cat /etc/v2ray/domain`
 fi
 
 clear
@@ -84,6 +84,8 @@ echo -e ""
 echo -e "[ ${green}INFO${NC} ] Start " 
 sleep 0.5
 systemctl stop nginx
+domain=`cat /etc/xray/domain`
+domain=`cat /etc/v2ray/domain`
 domain=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
 Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
 if [[ ! -z "$Cek" ]]; then
@@ -103,11 +105,11 @@ echo -e "[ ${green}INFO${NC} ] Renew cert done... "
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
 sleep 2
-echo $domain > /root/domain
-echo $domain > /etc/v2ray/domain
-echo $domain >/etc/xray/domain
-echo $domain >/etc/xray/scdomain
-echo $domain >/etc/x2ray/scdomain
+echo "$domain" > /root/domain
+echo "$domain" > /etc/v2ray/domain
+echo "$domain" >/etc/xray/domain
+echo "$domain" >/etc/xray/scdomain
+echo "$domain" >/etc/x2ray/scdomain
 systemctl restart $Cek
 systemctl restart nginx
 echo -e "[ ${green}INFO${NC} ] All finished... " 
