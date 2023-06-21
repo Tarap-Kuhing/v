@@ -183,16 +183,6 @@ wget -O clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/c
 wget -O menu-trgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trojan.sh"
 wget -O menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssh.sh"
-wget -O usernew "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cek.sh"
-wget -O member "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/member.sh"
-wget -O delete "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/tendang.sh"
 wget -O menu-set "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-set.sh"
 wget -O menu-domain "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-domain.sh"
 wget -O add-host "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-host.sh"
@@ -214,30 +204,15 @@ wget -O menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh"
 wget -O jam "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/jam.sh"
-wget -O add-ws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ws.sh"
 wget -O trialvmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvmess.sh"
-wget -O renew-ws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renew-ws.sh"
-wget -O del-ws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/del-ws.sh"
-wget -O cek-ws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cek-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-vless.sh"
 wget -O trialvless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvless.sh"
-wget -O renew-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renew-vless.sh"
-wget -O del-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/del-vless.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cek-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-tr.sh"
 wget -O trialtrojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojan.sh"
-wget -O del-tr "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/del-tr.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renew-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cek-tr.sh"
 wget -O addtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/addtrgo.sh"
 wget -O trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojango.sh"
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
-wget -O add-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-vmess.sh"
-wget -O show-user "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/show-user.sh"
-wget -O m-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-vmess.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -252,16 +227,6 @@ chmod +x clearcache
 chmod +x menu-trgo
 chmod +x menu-trojan
 chmod +x menu-ssh
-chmod +x usernew
-chmod +x trial
-chmod +x renew
-chmod +x hapus
-chmod +x cek
-chmod +x member
-chmod +x delete
-chmod +x autokill
-chmod +x ceklim
-chmod +x tendang
 chmod +x menu-set
 chmod +x menu-domain
 chmod +x add-host
@@ -283,30 +248,15 @@ chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
-chmod +x add-ws
 chmod +x trialvmess
-chmod +x renew-ws
-chmod +x del-ws
-chmod +x cek-ws
-chmod +x add-vless
 chmod +x trialvless
-chmod +x renew-vless
-chmod +x del-vless
-chmod +x cek-vless
-chmod +x add-tr
 chmod +x trialtrojan
-chmod +x del-tr
-chmod +x renew-tr
-chmod +x cek-tr
 chmod +x addtrgo
 chmod +x trialtrojango
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
-chmod +x add-vmess
-chmod +x show-user
-chmod +x m-vmess
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
