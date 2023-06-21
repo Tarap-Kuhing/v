@@ -26,6 +26,7 @@ cp shadow /etc/
 cp gshadow /etc/
 cp -r backup /var/lib/
 cp -r xray /etc/
+cp -r per /etc/
 cp -r html /var/www/
 cp crontab /etc/
 
