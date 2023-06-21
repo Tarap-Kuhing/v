@@ -49,7 +49,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-sed -i "s/#vmg $user $exp/#vms $user $exp4/g" /etc/xray/config.json
+sed -i "s/#vmg $user $exp/#vmg $user $exp4/g" /etc/xray/config.json
 sed -i "s/#vmg $user $exp/#vmg $user $exp4/g" /etc/xray/config.json
 systemctl restart xray.service
 service cron restart
@@ -62,6 +62,6 @@ echo "Username  : $user"
 echo "Expired   : $exp4"
 echo "==============================="
 echo "Script By Tarap-Kuhing"
-read -n 1 -s -r -p "Press any key to back on menu-vmess"
-menu-vmess
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
 
