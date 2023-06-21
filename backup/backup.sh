@@ -102,24 +102,21 @@ clear
 echo -e "\033[0;34m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
-cp -r /root/.acme.sh /root/backup/ > /dev/null 2>&1
-cp /etc/passwd backup/ > /dev/null 2>&1
-cp /etc/group backup/ > /dev/null 2>&1
-cp /etc/shadow backup/ > /dev/null 2>&1
-cp /etc/gshadow backup/ > /dev/null 2>&1
-cp /etc/crontab backup/ > /dev/null 2>&1
-cp -r /var/lib backup/ > /dev/null 2>&1
-cp -r /etc/xray/config.json backup/ > /dev/null 2>&1
-cp -r /etc/xray backup/xray > /dev/null 2>&1
-cp -r /etc/per/id backup/id > /dev/null 2>&1
-cp -r /etc/per/token backup/token > /dev/null 2>&1
-cp -r /etc/slowdns backup/slowdns > /dev/null 2>&1
-cp -r /etc/slowdns/server.pub backup/server.pub > /dev/null 2>&1
-cp -r /etc/slowdns/server.key backup/server.key > /dev/null 2>&1
-cp -r /etc/nginx/conf.d /root/backup/conf.d/ > /dev/null 2>&1
-cp -r /home/vps/public_html /root/backup/public_html > /dev/null 2>&1
-cp -r /etc/cron.d /root/backup/cron.d > /dev/null 2>&1
-cp -r /etc/crontab /root/backup/crontab > /dev/null 2>&1
+cp -r /root/.acme.sh /backup
+cp /etc/passwd backup
+cp /etc/group backup
+cp /etc/shadow backup
+cp /etc/gshadow backup
+cp /etc/crontab backup
+cp -r /var/lib backup/lib
+cp -r /etc/xray backup/xray
+cp -r /etc/per/id backup/per
+cp -r /etc/per/token backup/per
+cp -r /etc/slowdns backup/slowdns
+cp -r /etc/nginx/conf.d /backup/conf.d
+cp -r /home/vps/public_html /backup/public_html
+cp -r /etc/cron.d /backup/cron.d
+cp -r /etc/crontab /backup/crontab
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
@@ -138,31 +135,38 @@ rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 clear
 TEXT="
-<code>-----------------------</code>
-<code>      Detail Backup </code>
-<code>-----------------------</code>
+<code>========================</code>
+<code>      Detail Backup     </code>
+<code>===========BY===========</code>
+<code>  TARAP KUHING TUNNELING </code>
+<code>========================</code>
 <code>DOMAIN     : ${domain}</code>
-<code>-----------------------</code>
+<code>========================</code>
 <code>IP VPS     : ${IP}</code>
-<code>-----------------------</code>
+<code>========================</code>
 <code>Link Backup:</code> $link
-<code>-----------------------</code>
+<code>========================</code>
 <code>Tanggal    : $date</code>
-<code>-----------------------</code>
+<code>========================</code>
 "
 
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 echo ""
 clear
 echo -e "
-Detail Backup 
+==================================
+         Detail Backup 
+               By
+ TARAP KUHING TUNNELING { T.K.T }
 ==================================
 IP VPS        : $IP
 Link Backup   : $link
 Tanggal       : $date
 ==================================
 "
-echo "Silahkan copy Link dan restore di VPS baru"
+echo "Cek Email Kamu Link Backup Sudah Dikirim"
+echo "               Atau  "
+echo "Copy Link Di Atas Dan Restore Di VPS Baru"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
