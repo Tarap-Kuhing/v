@@ -7,6 +7,11 @@
 # //  telegram: https://t.me/Baung2012
 # //====================================================
 # // font color configuration | TARAP KUHING AUTOSCRIPT
+ateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+
+cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -42,7 +47,10 @@ rm -rf /etc/xray/domain
 rm -rf /etc/v2ray/domain
 rm -rf /etc/xray/scdomain
 rm -rf /etc/v2ray/scdomain
-echo $domain > /root/domain
-echo $domain > /etc/v2ray/domain
-echo $domain >/etc/xray/domain
+echo "$domain" > /root/domain
+echo "$domain" > /etc/v2ray/domain
+echo "$domain" > /etc/xray/domain
+echo "$domain" > /etc/v2ray/scdomain
+echo "$domain" > /etc/xray/scdomain
+echo "IP=$domain" > /var/lib/ipvps.conf
 certv2ray
