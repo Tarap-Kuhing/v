@@ -57,13 +57,13 @@ Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP
 fi
 
 # =========================================
-vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
+vlx=$(grep -c -E "^#vlg " "/etc/xray/config.json")
 let vla=$vlx/2
-vmc=$(grep -c -E "^### " "/etc/xray/config.json")
+vmc=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 let vma=$vmc/2
 ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 
-trx=$(grep -c -E "^#! " "/etc/xray/config.json")
+trx=$(grep -c -E "^#tr " "/etc/xray/config.json")
 let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
