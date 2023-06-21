@@ -102,19 +102,35 @@ clear
 echo -e "\033[0;34m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
-cp -r /root/.acme.sh /backup
-cp /etc/passwd backup/
-cp /etc/group backup/
-cp /etc/shadow backup/
-cp /etc/gshadow backup/
-cp /etc/crontab backup/
-cp /etc/cron.d backup/cron.d
-cp -r /var/lib backup/lib
-cp -r /etc/xray backup/xray
-cp -r /etc/per backup/per
-cp -r /etc/slowdns backup/slowdns
-cp -r /etc/nginx/conf.d backup/conf.d
-cp -r /home/vps/public_html backup/public_html
+cp -r /root/.acme.sh /root/backup/ &> /dev/null
+cp -r /etc/passwd /root/backup/ &> /dev/null
+cp -r /etc/group /root/backup/ &> /dev/null
+cp -r /etc/shadow /root/backup/ &> /dev/null
+cp -r /etc/gshadow /root/backup/ &> /dev/null
+cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
+cp -r /var/lib/ /root/backup &> /dev/null
+cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/per /root/backup/per &> /dev/null
+#cp -r /root/nsdomain backup/nsdomain &> /dev/null
+cp -r /etc/slowdns backup/slowdns &> /dev/null
+cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
+cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
+cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
+cp -r /etc/crontab /root/backup/crontab &> /dev/null
+
+#cp -r /root/.acme.sh /backup
+#cp /etc/passwd backup/
+#cp /etc/group backup/
+#cp /etc/shadow backup/
+#cp /etc/gshadow backup/
+#cp /etc/crontab backup/
+#cp /etc/cron.d backup/cron.d
+#cp -r /var/lib backup/lib
+#cp -r /etc/xray backup/xray
+#cp -r /etc/per backup/per
+#cp -r /etc/slowdns backup/slowdns
+#cp -r /etc/nginx/conf.d backup/conf.d
+#cp -r /home/vps/public_html backup/public_html
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
