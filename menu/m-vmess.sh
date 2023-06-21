@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
@@ -73,6 +71,9 @@ exit 0
 fi
 clear
 function add-vmess(){
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
+author=$(cat /etc/profil)
 
 TIMES="10"
 CHATID=$(cat /etc/per/id)
@@ -259,6 +260,9 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
 function trial-vmess(){
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
+author=$(cat /etc/profil)
 
 TIMES="10"
 CHATID=$(cat /etc/per/id)
@@ -420,6 +424,8 @@ TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
 domain=$(cat /etc/xray/domain)
 NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
@@ -647,6 +653,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 		fi
 	done
 clear
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
+author=$(cat /etc/profil)
 user=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 domain=$(cat /etc/xray/domain)
 uuid=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
