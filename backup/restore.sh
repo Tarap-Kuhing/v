@@ -19,21 +19,39 @@ unzip backup.zip
 rm -f backup.zip
 sleep 1
 echo Start Restore
-cd /root/backup
-cp passwd /etc/
-cp group /etc/
-cp shadow /etc/
-cp gshadow /etc/
-cp -r backup /var/lib/
-#cp -r backup/xray /etc/xray
-#cp -r backup/per /etc/per
-cp -r /root/backup/per /etc/ &> /dev/null
-cp -r /root/backup/slowdns /etc/ &> /dev/null
+cp -r /root/backup/passwd /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring group data..."
+sleep 1
+cp -r /root/backup/group /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring shadow data..."
+sleep 1
+cp -r /root/backup/shadow /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring gshadow data..."
+sleep 1
+cp -r /root/backup/gshadow /etc/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring chap-secrets data..."
+sleep 1
+cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
+echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd1 data..."
+sleep 1
+#cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
+#echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
+#sleep 1
+#cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
+#echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
+#sleep 1
+cp -r /root/backup /var/lib/ &> /dev/null
+#cp -r /root/backup/wireguard /etc/ &> /dev/null
+cp -r /root/backup/.acme.sh /root/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
 cp -r /root/backup/slowdns /etc/ &> /dev/null
-cp -r public_html/backup /etc/
-cp -r html /var/www/
-cp crontab /etc/
+cp -r /root/backup/per/root/ &> /dev/null
+cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
+#cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
+cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/crontab /etc/ &> /dev/null
+cp -r /root/backup/cron.d /etc/ &> /dev/null
+systemctl restart xray
 
 rm -rf /root/backup
 rm -f backup.zip
