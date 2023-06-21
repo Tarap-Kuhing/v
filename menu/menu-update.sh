@@ -167,6 +167,7 @@ rm -rf m-sshovpn
 rm -rf cf
 rm -rf add-vmess
 rm -rf show-user
+rm -rf m-vmess
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -236,6 +237,7 @@ wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cekt
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
 wget -O add-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-vmess.sh"
 wget -O show-user "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/show-user.sh"
+wget -O m-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-vmess.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -304,6 +306,7 @@ chmod +x cektrgo
 chmod +x cf
 chmod +x add-vmess
 chmod +x show-user
+chmod +x m-vmess
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
