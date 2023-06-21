@@ -154,7 +154,6 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x 
 rm tools.sh
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api;chmod +x api;./api
-rm api
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing;chmod +x kuhing;./kuhing
 rm kuhing
