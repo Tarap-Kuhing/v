@@ -265,6 +265,7 @@ case $opt in
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
+15) clear ; m-vmess ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
