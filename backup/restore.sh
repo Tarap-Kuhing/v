@@ -43,9 +43,9 @@ sleep 1
 cp -r /root/backup /var/lib/ &> /dev/null
 #cp -r /root/backup/wireguard /etc/ &> /dev/null
 cp -r /root/backup/.acme.sh /root/ &> /dev/null
-cp -r /root/backup/xray /etc/ &> /dev/null
-cp -r /root/backup/slowdns /etc/ &> /dev/null
-cp -r /root/backup/per/root/ &> /dev/null
+cp -r /root/backup/xray /etc/xray &> /dev/null
+cp -r /root/backup/slowdns /etc/slowdns &> /dev/null
+cp -r /root/backup/per /etc/per &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 #cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
