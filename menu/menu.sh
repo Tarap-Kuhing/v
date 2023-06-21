@@ -57,7 +57,7 @@ Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP
 fi
 
 # =========================================
-vmc=$(grep -c -E "^#vmg " "/xray/config.json")
+vmc=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 # TOTAL ACC CREATE  VLESS WS
 vlx=$(grep -c -E "^#vlg " "/etc/xray/config.json")
 # TOTAL ACC CREATE  TROJAN
