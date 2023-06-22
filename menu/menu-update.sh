@@ -168,6 +168,8 @@ rm -rf cf
 rm -rf add-vmess
 rm -rf menu-bckp
 rm -rf m-vmess
+rm -rf menu-bot
+rm -rf bot
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -215,6 +217,7 @@ wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cekt
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
 wget -O menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bot.sh"
+wget -O bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/bot.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -261,6 +264,7 @@ chmod +x cektrgo
 chmod +x cf
 chmod +x menu-bckp
 chmod +x menu-bot
+chmod +x bot
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
