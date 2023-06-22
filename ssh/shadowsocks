@@ -1,6 +1,6 @@
 #!/bin/bash
   while true; do
-  sleep 30
+  sleep 10
   data=($(cat /etc/xray/config.json | grep '^#ss' | cut -d ' ' -f 2 | sort | uniq))
   if [[ ! -e /etc/limit/shadowsocks ]]; then
   mkdir -p /etc/limit/shadowsocks
