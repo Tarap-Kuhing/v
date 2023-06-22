@@ -1,15 +1,4 @@
 #!/bin/bash
-clear
-ipes=$(curl -sS ipv4.icanhazip.com)
-surat=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/vps | grep -w $ipes | awk '{print $4}')
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-if [[ "$surat" = "true" ]]; then
-  echo -ne
-else
-  red "You cant use this bot panel !"
-  exit 0
-fi
-
 [[ ! -f /usr/bin/jq ]] && {
   red "Downloading jq file!"
   wget -q --no-check-certificate "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -O /usr/bin/jq
