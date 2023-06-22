@@ -138,12 +138,13 @@ touch /etc/ssh/.ssh.db
 touch /etc/shadowsocks/.shadowsocks.db
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
+mkdir -p /etc/loksi
 touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
-touch /etc/xray/city
-touch /etc/xray/isp
+touch /etc/lokasi/city
+touch /etc/loksi/isp
 mkdir -p /etc/per
 touch /etc/per/id
 touch /etc/per/token
