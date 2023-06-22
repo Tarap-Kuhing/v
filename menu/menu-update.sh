@@ -214,6 +214,7 @@ wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/re
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
+wget -O menu-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bot.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -259,6 +260,7 @@ chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
 chmod +x menu-bckp
+chmod +x menu-bot
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
