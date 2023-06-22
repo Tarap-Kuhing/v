@@ -188,12 +188,33 @@ resv2r="${green}ON${NC}"
 else
 resv2r="${red}OFF${NC}"
 fi
+today=$(date -d "0 days" +"%Y-%m-%d")
+Exp1=$(curl https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $4}')
+if [[ $today < $Exp1 ]]; then
+    sts="${Info}"
+else
+    sts="${Error}"
+fi
+DATE=$(date +'%Y-%m-%d')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+}
+mai="datediff "$Exp" "$DATE""
+
+today=`date -d "0 days" +"%Y-%m-%d"`
+
+# CERTIFICATE STATUS
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$today" +%s)
+certificate=$(( (d1 - d2) / 86400 ))
 export sem=$( curl -s https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                     ⇱ INFORMASI VPS ⇲                        \E[0m"
+echo -e "${BIYellow}                     ⇱ INFORMASI VPS ⇲                        ${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
 echo -e "${BIYellow}□ Server Uptime       = ${BICyan}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
@@ -204,10 +225,10 @@ echo -e "${BIYellow}□ NS Domain           = ${BICyan}$( cat /etc/xray/dns )${N
 echo -e "${BIYellow}□ Jumlah Ram          = ${BICyan}${totalram}MB"
 echo -e "${BIYellow}□ CPU Usage           = ${BICyan}$cpu_usage"
 echo -e "${BIYellow}□ Clients Name        = ${BICyan}${Name}${NC}"
-echo -e "${BIYellow}□ Expired Script VPS  = ${RED}${Exp}${NC}"
+echo -e "${BIYellow}□ Expired Script VPS  = ${RED}${certificate} ${BIYellow}day${NC}"
 echo -e "${BIYellow}□ Time Reboot VPS     = ${BICyan}00:00 ${GREEN}( Jam 12 Malam )${NC}"
-echo -e "${BIYellow}□ WHATSAPP            = ${UWhite}{ 085754292950 }${NC}"
-echo -e "${BIYellow}□ AutoScript By T.K.T = ${RED}( ${BICyan}TARAP ${BIYellow}KUHING ${BIWhite}TUNNELING ${RED})${NC}"
+echo -e "${BIYellow}□ WHATSAPP            = ${IPurple}{ ${BIWhite}085754292950 ${IPurple}}${NC}"
+echo -e "${BIYellow}□ AutoScript By T.K.T = ${IPurple}( ${BICyan}TARAP ${BIYellow}KUHING ${BIWhite}TUNNELING ${IPurple})${NC}"
 
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}TARAP ${BIYellow}KUHING ${BICyan}TUNNELING ${NC}"
@@ -243,10 +264,11 @@ echo -e "${BICyan} └───────────────────�
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
+
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version      ${NC} : ${sem} Last Update"
-echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m ${Name} \e[0m"
-echo -e " ${BICyan}│  Day Expired${NC}   :\033[1;91m ${Exp} \e[0m"
+echo -e " ${BICyan}│  Version       ${NC}     : ${BIWhite}${sem} ${IPurple}Last Update ${NC}"
+echo -e " ${BICyan}│  User             ${NC}  :${BIYellow} ${Name} ${NC}"
+echo -e " ${BICyan}│  Day Expired${NC}   :${BIYellow} ${Exp} ${NC}${sts}"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
