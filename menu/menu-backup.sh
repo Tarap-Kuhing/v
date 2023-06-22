@@ -61,6 +61,7 @@ echo -e ""
 echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Backup VPS Data      "
 echo -e "     ${BICyan}[${BIWhite}02${BICyan}] AutoBackup VPS Data      "
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Restore VPS Data     "
+echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Backup Github VPS Data     "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
@@ -71,6 +72,7 @@ case $opt in
 01 | 1) clear ; backup ;;
 02 | 2) clear ; autobackup ;;
 03 | 3) clear ; restore ;;
+04 | 4) clear ; menu-bckp ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-bckp ;;
 esac
