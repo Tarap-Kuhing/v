@@ -97,6 +97,7 @@ rm -rf m-ip
 rm -rf menu-trial
 rm -rf menu-vmess
 rm -rf menu-vless
+rm -rf menu-ssws
 rm -rf running
 rm -rf clearcache
 rm -rf menu-trgo
@@ -168,6 +169,7 @@ wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh
 wget -O menu-trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh"
+wget -O menu-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssws.sh"
 wget -O running "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/clearcache.sh"
 wget -O menu-trgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh"
@@ -214,6 +216,7 @@ chmod +x m-bot
 chmod +x menu-trial
 chmod +x menu-vmess
 chmod +x menu-vless
+chmod +x menu-ssws
 chmod +x running
 chmod +x clearcache
 chmod +x menu-trgo
