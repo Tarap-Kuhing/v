@@ -292,6 +292,7 @@ case $opt in
 15) clear ; menu-bckp ;;
 16) clear ; menu-bot ;;
 17) clear ; bot ;;
+18) clear ; tes ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
