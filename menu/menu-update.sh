@@ -166,7 +166,7 @@ rm -rf cektrgo
 rm -rf m-sshovpn
 rm -rf cf
 rm -rf add-vmess
-rm -rf show-user
+rm -rf menu-bckp
 rm -rf m-vmess
 
 cd /usr/bin
@@ -212,7 +212,8 @@ wget -O trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xra
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
 wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
-wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/sc/main/ssh/cf"
+wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
+wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
 
 chmod +x menu-update
 chmod +x update
@@ -257,6 +258,7 @@ chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
+chmod +x menu-bckp
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
