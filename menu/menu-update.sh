@@ -66,16 +66,6 @@ echo ""
 version=$(cat /home/ver)
 ver=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi )
 clear
-# LINE COLOUR
-line=$(cat /etc/line)
-# TEXT COLOUR BELOW
-below=$(cat /etc/below)
-# BACKGROUND TEXT COLOUR
-back_text=$(cat /etc/back)
-# NUMBER COLOUR
-number=$(cat /etc/number)
-# TEXT ON BOX COLOUR
-box=$(cat /etc/box)
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info1="${Green_font_prefix}($version)${Font_color_suffix}"
@@ -92,7 +82,7 @@ fi
 clear
 echo -e "\e[1;31mUpdate Available Now..\e[m"
 echo -e ""
-sleep 2
+sleep 1
 echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
 sleep 2
 clear
