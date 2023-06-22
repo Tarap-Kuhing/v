@@ -2,12 +2,12 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-colornow=$(cat /etc/tarap/theme/color.conf)
+colornow=$(cat /etc/kuhing/theme/color.conf)
 export NC="\e[0m"
 export YELLOW='\033[0;33m';
 export RED="\033[0;31m"
-export COLOR1="$(cat /etc/tarap/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-export COLBG1="$(cat /etc/tarap/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+export COLOR1="$(cat /etc/kuhing/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+export COLBG1="$(cat /etc/kuhing/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
@@ -244,7 +244,7 @@ cp -r /root/backup /var/lib/ &> /dev/null
 cp -r /root/backup/.acme.sh /root/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
 cp -r /root/backup/slowdns /etc/ &> /dev/null
-cp -r /root/backup/per/root/ &> /dev/null
+cp -r /root/backup/per/ /etc/ &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 #cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
