@@ -109,7 +109,7 @@ echo "$domain" > /root/domain
 echo "$domain" > /etc/v2ray/domain
 echo "$domain" >/etc/xray/domain
 echo "$domain" >/etc/xray/scdomain
-echo "$domain" >/etc/x2ray/scdomain
+echo "$domain" >/etc/2ray/scdomain
 systemctl restart $Cek
 systemctl restart nginx
 echo -e "[ ${green}INFO${NC} ] All finished... " 
