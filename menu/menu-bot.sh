@@ -115,7 +115,7 @@ EOF
 fun_bot1() {
 clear
 [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
-wget -q -O https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api >/etc/.maAsiss/.Shellbtsss
+wget -q -O https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/BotApi.sh >/etc/.maAsiss/.Shellbtsss
 }
 [[ "$(grep -wc "sam_bot" "/etc/rc.local")" = '0' ]] && {
 sed -i '$ i\screen -dmS sam_bot bbt' /etc/rc.local >/dev/null 2>&1
