@@ -189,8 +189,8 @@ else
 resv2r="${red}OFF${NC}"
 fi
 today=$(date -d "0 days" +"%Y-%m-%d")
-Exp=$(curl https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $4}')
-if [[ $today < $Exp ]]; then
+Exp1=$(curl https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $4}')
+if [[ $today < $Exp1 ]]; then
     sts="${Info}"
 else
     sts="${Error}"
@@ -268,7 +268,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}│  Version      ${NC} : ${BIWhite}${sem} ${IPurple}Last Update ${NC}"
 echo -e " ${BICyan}│  User         ${NC} :${BIYellow} ${Name} ${NC}"
-echo -e " ${BICyan}│  Day Expired${NC}   :${BIYellow} ${Exp} ${NC}${sts}"
+echo -e " ${BICyan}│  Day Expired${NC}   :${BIYellow} ${Exp}${NC} ${sts}"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo ""
 read -p " Select menu : " opt
