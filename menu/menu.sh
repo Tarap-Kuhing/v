@@ -289,7 +289,8 @@ case $opt in
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
 15) clear ; menu-bckp ;;
-15) clear ; add-ns ;;
+16) clear ; add-ns ;;
+17) clear ; update;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
