@@ -116,9 +116,9 @@ menu-vmess
 #bug.com=$bug_addr2
 #else
 #bug.com=$bug_addr
-read -p "MASUKAN UUID: " uuid
+#read -p "MASUKAN UUID: " uuid
 echo -e ""
-#uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
@@ -550,7 +550,6 @@ domain=$(cat /etc/xray/domain)
 #systemctl restart xray
 #sleep 1
 clear
-author=$(cat /etc/profil)
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '^#vm' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -594,10 +593,10 @@ TEXT="
 <b>  ⚠️ XRAY VMESS NOTIF ⚠️</b>
 <b>         User Login</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
-<b>DOMAIN :</b> <code>${domain} </code>
-<b>ISP AND CITY :</b> <code>$ISP $CITY </code>
-<b>USERNAME :</b> <code>$akun </code>
-<b>TOTAL IP :</b> <code>${jum2} </code>
+<b>DOMAIN    :</b> <code>${domain} </code>
+<b>ISP & CITY:</b> <code>$ISP $CITY </code>
+<b>USERNAME  :</b> <code>$akun </code>
+<b>TOTAL IP  :</b> <code>${jum2} </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 "
 
@@ -653,7 +652,6 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 clear
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
-author=$(cat /etc/profil)
 user=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 domain=$(cat /etc/xray/domain)
 uuid=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
@@ -776,7 +774,7 @@ case $opt in
 04 | 4) clear ; del-vmess ;;
 05 | 5) clear ; cek-vmess ;;
 06 | 6) clear ; list-vmess ;;
-07 | 7) clear ; m-vmess ;;
+07 | 7) clear ; add-v2ray ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-vmess ;;
 esac
