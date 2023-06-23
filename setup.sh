@@ -131,6 +131,13 @@ sleep 2
 rm -rf /etc/per
 mkdir -p /etc/{vmess,websocket,vless,trojan,shadowsocks}
 mkdir -p /etc/Tarap-Kuhing/public_html
+mkdir -p /var/log/xray/
+touch /var/log/xray/{access.log,error.log}
+chmod 777 /var/log/xray/*.log
+touch /etc/vmess/.vmess.db
+touch /etc/vless/.vless.db
+touch /etc/trojan/.trojan.db
+touch /etc/ssh/.ssh.db
 touch /etc/vmess/.vmess.db
 touch /etc/vless/.vless.db
 touch /etc/trojan/.trojan.db
@@ -138,7 +145,7 @@ touch /etc/ssh/.ssh.db
 touch /etc/shadowsocks/.shadowsocks.db
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
-mkdir -p /etc/loksi
+mkdir -p /etc/lokasi
 touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
@@ -161,7 +168,9 @@ echo ""
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
 clear
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api.sh;chmod +x api.sh;./api.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api;chmod +x api;./api
+clear
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing;chmod +x kuhing;./kuhing
 rm kuhing
