@@ -102,6 +102,6 @@ chmod +x menu-bckp
 chmod +x add-ssws
 chmod +x add-v2ray
 chmod +x add-ns
-echo -e " [INFO] Downloading Update File Selesai....
+echo -e "${tyblue}[INFO] Downloading Update File Selesai...."
 sleep 5
 menu
