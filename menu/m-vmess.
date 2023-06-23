@@ -70,7 +70,7 @@ red "Permission Denied!"
 exit 0
 fi
 clear
-function add-vmess(){
+function add-v2ray(){
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 author=$(cat /etc/profil)
