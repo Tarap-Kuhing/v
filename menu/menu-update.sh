@@ -134,12 +134,12 @@ rm -rf menu-backup
 rm -rf backup
 rm -rf restore
 rm -rf jam
-rm -rf add-ws
+rm -rf add-v2ray
 rm -rf trialvmess
 rm -rf renew-ws
 rm -rf del-ws
 rm -rf cek-ws
-rm -rf add-vless
+rm -rf add-ssws
 rm -rf trialvless
 rm -rf renew-vless
 rm -rf del-vless
@@ -158,7 +158,6 @@ rm -rf m-sshovpn
 rm -rf cf
 rm -rf add-vmess
 rm -rf menu-bckp
-rm -rf m-vmess
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -206,7 +205,9 @@ wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/re
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
-wget -q BotApi "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/BotApi.sh"
+wget -O add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh"
+wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
+
 
 chmod +x menu-update
 chmod +x update
@@ -253,7 +254,8 @@ chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
 chmod +x menu-bckp
-chmod +x BotApi
+chmod +x add-ssws
+chmod +x add-v2ray
 
 clear
 echo -e ""
