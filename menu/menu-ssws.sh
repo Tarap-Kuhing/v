@@ -74,8 +74,6 @@ clear
 function add-ssws(){
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
-author=$(cat /etc/profil)
-
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -422,8 +420,8 @@ echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "$COLOR1 ${NC} "
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on m-ssws"
-m-ssws
+read -n 1 -s -r -p "Press any key to back on menu-ssws"
+menu-ssws
 }
 function trial-ssws(){
 ISP=$(cat /etc/xray/isp)
@@ -530,8 +528,8 @@ echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "$COLOR1 ${NC} "
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on m-ssws"
-m-ssws
+read -n 1 -s -r -p "Press any key to back on menu-ssws"
+menu-ssws
 }
 function renew-ssws(){
 TIMES="10"
@@ -643,8 +641,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     echo " Expired On  : $exp"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-    read -n 1 -s -r -p "Press any key to back on m-ssws"
-    m-ssws
+    read -n 1 -s -r -p "Press any key to back on menu-ssws"
+    menu-ssws
 }
 
 function cek-sshws(){
@@ -658,7 +656,6 @@ domain=$(cat /etc/xray/domain)
 #systemctl restart xray
 #sleep 1
 clear
-author=$(cat /etc/profil)
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '^##' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -717,11 +714,11 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "$COLOR1 ${NC} "
-read -n 1 -s -r -p "   Press any key to back on m-ssws"
-m-ssws
+read -n 1 -s -r -p "   Press any key to back on menu-ssws"
+menu-ssws
 
 }
-function list-vmess(){
+function list-ssws(){
 clear
 tls="$(cat ~/log-install.txt | grep -w "Shadowsocks WS TLS" | cut -d: -f2|sed 's/ //g')"
 ntls="$(cat ~/log-install.txt | grep -w "Shadowsocks WS none TLS" | cut -d: -f2|sed 's/ //g')"
@@ -735,8 +732,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
 		echo "You have no existing clients!"
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-                read -n 1 -s -r -p "Press any key to back on menu"
-        m-vmess
+                read -n 1 -s -r -p "Press any key to back on menu-ssws"
+        menu-ssws
 	fi
 	clear
 	echo ""
@@ -843,12 +840,11 @@ echo -e "$COLOR1 ${NC}                ${WH}• $author •${NC}                 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "$COLOR1 ${NC} "
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on m-ssws"
-m-ssws
+read -n 1 -s -r -p "Press any key to back on menu-ssws"
+menu-ssws
 }
 clear
 
-author=$(cat /etc/profil)
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}              ${WH}• SSWS PANEL MENU •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
