@@ -104,7 +104,7 @@ clear
             echo ""
             echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
             read -n 1 -s -r -p "Press any key to back on menu"
-m-vmess
+menu-vmess
 		fi
 	done
 #read -p "   Bug Host : " address
@@ -255,7 +255,7 @@ echo -e "$COLOR1 ${NC}   ${WH}• $author •${NC}                 $COLOR1 $NC" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
-add-vmess
+menu-vmess
 }
 function trial-vmess(){
 ISP=$(cat /etc/xray/isp)
