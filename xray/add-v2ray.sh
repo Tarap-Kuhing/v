@@ -42,6 +42,7 @@ done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+echo -e ""
 read -p "Limit User (GB): " Quota
 exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
