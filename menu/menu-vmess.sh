@@ -116,8 +116,9 @@ m-vmess
 #bug.com=$bug_addr2
 #else
 #bug.com=$bug_addr
-
-uuid=$(cat /proc/sys/kernel/random/uuid)
+read -p "MASUKAN UUID: " uuid
+echo -e """
+#uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
@@ -254,7 +255,7 @@ echo -e "$COLOR1 ${NC}   ${WH}• $author •${NC}                 $COLOR1 $NC" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+add-vmess
 }
 function trial-vmess(){
 ISP=$(cat /etc/xray/isp)
