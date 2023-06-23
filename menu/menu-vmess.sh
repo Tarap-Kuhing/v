@@ -117,7 +117,7 @@ m-vmess
 #else
 #bug.com=$bug_addr
 read -p "MASUKAN UUID: " uuid
-echo -e """
+echo -e ""
 #uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
