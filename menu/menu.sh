@@ -289,7 +289,7 @@ case $opt in
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
 15) clear ; menu-bckp ;;
-16) clear ; add-ns ;;
+16) clear ; add-wireguard ;;
 17) clear ; update;;
 0) clear ; menu ;;
 x) exit ;;
