@@ -161,6 +161,7 @@ rm -rf menu-bckp
 rm -rf add-ns
 rm -rf issue
 rm -rf add-wireguard
+rm -rf updt
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -213,6 +214,7 @@ wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/ad
 wget -O wireguard "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh"
 wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-ns.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
+wget -O updt "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/upt"
 
 chmod +x menu-update
 chmod +x update
@@ -264,6 +266,7 @@ chmod +x add-v2ray
 chmod +x add-ns
 chmod +x issue
 chmod +x add-wireguard
+chmod +x updt
 
 clear
 echo -e ""
