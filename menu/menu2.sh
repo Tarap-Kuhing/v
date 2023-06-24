@@ -242,7 +242,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CLEAR SAMPAH   ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}BACKUP TO GITHUB  $COLOR1 $NC"   
 echo -e "  ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}17${WH}]${NC} ${COLOR1}• ${WH}CHANGE  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
-echo -e "  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}THEME  ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}14${WH}]${NC}  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}THEME  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 if [ "$Isadmin" = "ON" ]; then
