@@ -260,6 +260,7 @@ echo -e " ${BICyan}|    [${BIWhite}12${BICyan}] REGISTRASI IPVPS BARU${NC} "
 echo -e " ${BICyan}|    [${BIWhite}13${BICyan}] CLEAR SAMPAH${NC} "
 echo -e " ${BICyan}|    [${BIWhite}14${BICyan}] UPDATE SCRIPT    ${BICyan}[${BIYellow}T.K.T${BICyan}]${NC} "
 echo -e " ${BICyan}|    [${BIWhite}15${BICyan}] BACKUP TO GITHUB ${BICyan}[${BIYellow}Menu${BICyan}]${NC} "
+echo -e " ${BICyan}|    [${BIWhite}15${BICyan}] CHANGE MENU ${BICyan}[${BIYellow}T.K.T${BICyan}]${NC} "
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
@@ -289,9 +290,7 @@ case $opt in
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
 15) clear ; menu-bckp ;;
-16) clear ; add-wireguard ;;
-17) clear ; update;;
-18) clear ; add-ns;;
+16) clear ; wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu2.sh && chmod +x menu2.sh && ./menu2.sh && rm -f /root/menu2.sh ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
