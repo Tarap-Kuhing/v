@@ -4,104 +4,52 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
 echo -e " [INFO] Downloading Update File"
 sleep 2
-wget -q /usr/bin/ menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
-wget -q /usr/bin/ update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/update.sh"
-wget -q /usr/bin/ menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
-wget -q /usr/bin/ m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
-wget -q /usr/bin/ m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
-wget -q /usr/bin/ menu-trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh"
-wget -q /usr/bin/ menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh"
-wget -q /usr/bin/ menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh"
-wget -q /usr/bin/ menu-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssws.sh"
-wget -q /usr/bin/ running "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/running.sh"
-wget -q /usr/bin/ clearcache "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/clearcache.sh"
-wget -q /usr/bin/ menu-trgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh"
-wget -q /usr/bin/ menu-trojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trojan.sh"
-wget -q /usr/bin/ menu-ssh "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssh.sh"
-wget -q /usr/bin/ menu-set "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-set.sh"
-wget -q /usr/bin/ menu-domain "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-domain.sh"
-wget -q /usr/bin/ add-host "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-host.sh"
-wget -q /usr/bin/ port-change "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-change.sh"
-wget -q /usr/bin/ certv2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/certv2ray.sh"
-wget -q /usr/bin/ menu-webmin "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-webmin.sh"
-wget -q /usr/bin/ speedtest "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/speedtest_cli.py"
-wget -q /usr/bin/ about "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/about.sh"
-wget -q /usr/bin/ auto-reboot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/auto-reboot.sh"
-wget -q /usr/bin/ restart "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/restart.sh"
-wget -q /usr/bin/ bw "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/bw.sh"
-wget -q /usr/bin/ port-ssl "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-ssl.sh"
-wget -q /usr/bin/ port-ovpn "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-ovpn.sh"
-wget -q /usr/bin/ xp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/xp.sh"
-wget -q /usr/bin/ acs-set "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/acs-set.sh"
-wget -q /usr/bin/ sshws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/sshws.sh"
-wget -q /usr/bin/ status "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/status.sh"
-wget -q /usr/bin/ menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-backup.sh"
-wget -q /usr/bin/ backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/backup.sh"
-wget -q /usr/bin/ restore "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh"
-wget -q /usr/bin/ jam "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/jam.sh"
-wget -q /usr/bin/ trialvmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvmess.sh"
-wget -q /usr/bin/ trialvless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvless.sh"
-wget -q /usr/bin/ trialtrojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojan.sh"
-wget -q /usr/bin/ addtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/addtrgo.sh"
-wget -q /usr/bin/ trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojango.sh"
-wget -q /usr/bin/ deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
-wget -q /usr/bin/ renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh"
-wget -q /usr/bin/ cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
-wget -q /usr/bin/ cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
-wget -q /usr/bin/ menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
-wget -q /usr/bin/ add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh"
-wget -q /usr/bin/ add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
-wget -q /usr/bin/ add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh"
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh;chmod +x menu-update.sh;./menu-update.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/update.sh;chmod +x update.sh;./update.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh;chmod +x menu.sh;./menu.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh;chmod +x m-bot.sh;./m-bot.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh;chmod +x m-ip.sh;./m-ip.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh;chmod +x menu-trial.shh;./menu-trial.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh;chmod +x menu-vmess.sh;./menu-vmess.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh;chmod +x menu-vless.sh;./menu-vless.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssws.sh;chmod +x menu-ssws.sh;./menu-ssws.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/running.sh;chmod +x running.sh;./running.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/clearcache.sh;chmod +x clearcache.sh;./clearcache.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trgo.sh;chmod +x menu-trgo.sh;./menu-trgo.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trojan.sh;chmod +x menu-trojan.sh;./menu-trojan.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssh.sh;chmod +x menu-ssh.sh;./menu-ssh.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-set.sh;chmod +x menu-set.sh;./menu-set.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-domain.sh;chmod +x menu-domain.sh;./menu-domain.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-host.sh;chmod +x add-host.sh;./add-host.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-change.sh;chmod +x port-change.sh;./port-change.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/certv2ray.sh;chmod +x certv2ray.sh;./certv2ray.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-webmin.sh;chmod +x menu-webmin.sh;./menu-webmin.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/about.sh;chmod +x about.sh;./about.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/auto-reboot.sh;chmod +x auto-reboot.sh;./auto-reboot.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/restart.sh;chmod +x restart.sh;./restart.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/bw.sh;chmod +x bw.sh;./bw.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-ssl.sh;chmod +x port-ssl.sh;./port-ssl.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/port/port-ovpn.sh;chmod +x port-ovpn.sh;./port-ovpn.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/xp.sh;chmod +x xp.sh;./xp.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/status.sh;chmod +x status.sh;./status.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-backup.sh;chmod +x menu-backup.sh;./menu-backup.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/backup.sh;chmod +x backup.sh;./backup.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh;chmod +x restore.sh;./restore.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/jam.sh;chmod +x jam.sh;./jam.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvmess.sh;chmod +x trialvmess.sh;./trialvmess.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvless.sh;chmod +x trialvless.sh;./trialvless.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojan.sh;chmod +x trialtrojan.sh;./trialtrojan.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/addtrgo.sh;chmod +x addtrgo.sh;./addtrgo.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojango.sh;chmod +x trialtrojango.sh;./trialtrojango.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh;chmod +x deltrgo.sh;./deltrgo.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/renewtrgo.sh;chmod +x renewtrgo.sh;./renewtrgo.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh;chmod +x cektrgo.sh;./cektrgo.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh;chmod +x cf.sh;./cf.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh;chmod +x bckp.sh;./bckp.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh;chmod +x add-ssws.sh;./add-ssws.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh;chmod +x add-v2ray.sh;./add-v2ray.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh;chmod +x add-ns.sh;./add-ns.sh
 
-
-chmod +x menu-update
-chmod +x update
-chmod +x m-ip
-chmod +x menu
-chmod +x m-bot
-chmod +x menu-trial
-chmod +x menu-vmess
-chmod +x menu-vless
-chmod +x menu-ssws
-chmod +x running
-chmod +x clearcache
-chmod +x menu-trgo
-chmod +x menu-trojan
-chmod +x menu-ssh
-chmod +x menu-set
-chmod +x menu-domain
-chmod +x add-host
-chmod +x port-change
-chmod +x certv2ray
-chmod +x menu-webmin
-chmod +x speedtest
-chmod +x about
-chmod +x auto-reboot
-chmod +x restart
-chmod +x bw
-chmod +x port-ssl
-chmod +x port-ovpn
-chmod +x xp
-chmod +x acs-set
-chmod +x sshws
-chmod +x status
-chmod +x menu-backup
-chmod +x backup
-chmod +x restore
-chmod +x jam
-chmod +x trialvmess
-chmod +x trialvless
-chmod +x trialtrojan
-chmod +x addtrgo
-chmod +x trialtrojango
-chmod +x deltrgo
-chmod +x renewtrgo
-chmod +x cektrgo
-chmod +x cf
-chmod +x menu-bckp
-chmod +x add-ssws
-chmod +x add-v2ray
-chmod +x add-ns
 echo -e "${tyblue}[INFO] Downloading Update File Selesai...."
-sleep 5
+sleep 2
 menu
