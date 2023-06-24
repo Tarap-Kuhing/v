@@ -48,7 +48,7 @@ wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh;chmod +x
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh;chmod +x bckp.sh;./bckp.sh
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh;chmod +x add-ssws.sh;./add-ssws.sh
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh;chmod +x add-v2ray.sh;./add-v2ray.sh
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh;chmod +x add-ns.sh;./add-ns.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-ns.sh;chmod +x add-ns.sh;./add-ns.sh
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh;chmod +x add-wireguard.sh;./add-wireguard.sh
 
 echo -e "${tyblue}[INFO] Downloading Update File Selesai...."
