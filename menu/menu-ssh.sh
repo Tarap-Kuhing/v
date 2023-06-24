@@ -96,7 +96,6 @@ portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
-author=$(cat /etc/profil)
 
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -279,7 +278,7 @@ echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey"
 #echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey1"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-2288@$Login:$Pass"
+echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
@@ -431,7 +430,7 @@ echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey"
 #echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey1"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-2288@$Login:$Pass"
+echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
@@ -483,7 +482,7 @@ echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey"
 #echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey1"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-2288@$Login:$Pass"
+echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
@@ -721,7 +720,7 @@ echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey"
 #echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey1"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-2288@$Login:$Pass"
+echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass"
 echo -e "$COLOR1└────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1┌────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 #echo -e "$COLOR1 ${NC}  ${WH}           Payload WSS                                       ${NC}" | tee -a /etc/log-create-user.log
@@ -1098,6 +1097,7 @@ case $opt in
 07 | 7) clear ; hapuslama ; exit ;;
 08 | 8) clear ; autokill ; exit ;;
 09 | 9) clear ; ceklim ; exit ;;
+10 | 10) clear ; add-wireguard ; exit ;;
 00 | 0) clear ; menu ; exit ;;
 X  | 0) clear ; m-sshovpn ;;
 x) exit ;;
