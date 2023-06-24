@@ -5,6 +5,6 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 echo -e " [INFO] Downloading Update File"
 cd /usr/bin
 rm - rf menu
-wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu2.sh"
+wget -O menu2 "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu2.sh"
 chmod +x menu2
 menu
