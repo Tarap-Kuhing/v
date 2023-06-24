@@ -158,6 +158,7 @@ rm -rf m-sshovpn
 rm -rf cf
 rm -rf add-vmess
 rm -rf menu-bckp
+rm -rf add-ns
 rm -rf issue
 rm -rf add-wireguard
 
@@ -209,9 +210,9 @@ wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
 wget -O add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh"
 wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
-wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh"
+wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-ns.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
-wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh"
+wget -O wireguard "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh"
 
 chmod +x menu-update
 chmod +x update
