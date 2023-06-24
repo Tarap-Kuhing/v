@@ -237,15 +237,15 @@ echo -e "  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS   ${WH}[${COLOR1
 echo -e "  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}RUNNING  $COLOR1 $NC"  
 echo -e "  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN  ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SET REBOOT       $COLOR1 $NC"  
 echo -e "  ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}SS WS   ${WH}[${COLOR1}ON${WH}]   ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BOT TELE ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
-echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TRIAL ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REGIS IP VPS     ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TRIAL ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REG IP VPS     ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CLEAR SAMPAH   ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}THEME    ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"   
-echo -e "  ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}BACKUP TO GITHUB  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"  
+echo -e "  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CLEAR SAMPAH   ${WH}[${COLOR1}${status_ws}${WH}]   ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}BACKUP TO GITHUB  $COLOR1 $NC"   
+echo -e "  ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}UPDATE SCRIPT   ${WH}[${COLOR1}${status_xray}${WH}]   ${WH}[${COLOR1}17${WH}]${NC} ${COLOR1}• ${WH}CHANGE  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
+echo -e "  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}THEME  ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}14${WH}]${NC}  $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 if [ "$Isadmin" = "ON" ]; then
-echo -e "  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}REG IP  ${WH}[${COLOR1}Menu${WH}] ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}SET BOT  ${WH}[${COLOR1}Menu${WH}]  $COLOR1 $NC"
 ressee="menu-ip"
 bottt="menu-bot"
 else
@@ -305,7 +305,8 @@ case $opt in
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
 15) clear ; menu-theme ;;
-1) clear ; menu-bckp ;;
+16) clear ; menu-bckp ;;
+17) clear ; wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh && chmod +x menu.sh && ./menu.sh && rm -f /root/menu2.sh ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
