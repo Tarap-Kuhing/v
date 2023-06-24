@@ -291,6 +291,7 @@ case $opt in
 15) clear ; menu-bckp ;;
 16) clear ; add-wireguard ;;
 17) clear ; update;;
+18) clear ; add-ns;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
