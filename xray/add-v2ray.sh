@@ -225,15 +225,13 @@ TEXT="
 <code>User Quota   : ${Quota} GB</code>
 <code>Port TLS     : 443</code>
 <code>Port DNS     : 443, 53</code>
-<code>Port NTLS    : 80, 8080, 2086</code>
+<code>Port NTLS    : 80, 8080</code>
 <code>Port GRPC    : 443</code>
 <code>User ID      : ${uuid}</code>
 <code>AlterId      : 0</code>
 <code>Security     : auto</code>
 <code>Network      : WS or gRPC</code>
-<code>Path TLS     : (/vmess) (/custom)</code>
-<code>Path NLS     : (/vmess) (/custom)</code>
-<code>Path Dynamic : CF-XRAY:http://bug.com</code>
+<code>Path         : (/vmess) (/custom)</code>
 <code>ServiceName  : vmess-grpc</code>
 <code>───────────────────────────</code>
 <code>Link TLS     :</code>
@@ -287,16 +285,14 @@ echo -e "Pub Key      : ${PUB}" | tee -a /etc/log-create-user.log
 echo -e "Location     : $CITY" | tee -a /etc/log-create-user.log
 echo -e "User Quota   : ${Quota} GB" | tee -a /etc/log-create-user.log
 echo -e "Port TLS     : 443" | tee -a /etc/log-create-user.log
-echo -e "Port NTLS    : 80, 8080, 2086" | tee -a /etc/log-create-user.log
+echo -e "Port NTLS    : 80, 8080," | tee -a /etc/log-create-user.log
 echo -e "Port DNS     : 443, 53 " | tee -a /etc/log-create-user.log
 echo -e "Port GRPC    : 443" | tee -a /etc/log-create-user.log
 echo -e "User ID      : ${uuid}" | tee -a /etc/log-create-user.log
 echo -e "AlterId      : 0" | tee -a /etc/log-create-user.log
 echo -e "Security     : auto" | tee -a /etc/log-create-user.log
 echo -e "Network      : WS or gRPC" | tee -a /etc/log-create-user.log
-echo -e "Path TLS     : (/multi path) " | tee -a /etc/log-create-user.log
-echo -e "Path NLS     : (/multi path) " | tee -a /etc/log-create-user.log
-echo -e "Path Dynamic : CF-XRAY:http://bug.com " | tee -a /etc/log-create-user.log
+echo -e "Path         : (/vmess) " | tee -a /etc/log-create-user.log
 echo -e "ServiceName  : vmess-grpc" | tee -a /etc/log-create-user.log
 echo -e "\033[1;93m───────────────────────────\033[0m" | tee -a /etc/log-create-user.log
 echo -e "Link TLS     : ${vmesslink1}" | tee -a /etc/log-create-user.log
