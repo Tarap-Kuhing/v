@@ -158,6 +158,7 @@ rm -rf m-sshovpn
 rm -rf cf
 rm -rf add-vmess
 rm -rf menu-bckp
+rm -rf iseu
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
@@ -208,7 +209,7 @@ wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/me
 wget -O add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh"
 wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
 wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh"
-
+wget -O issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
 
 chmod +x menu-update
 chmod +x update
@@ -258,6 +259,7 @@ chmod +x menu-bckp
 chmod +x add-ssws
 chmod +x add-v2ray
 chmod +x add-ns
+chmod +x issue.net
 
 clear
 echo -e ""
