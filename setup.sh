@@ -148,8 +148,6 @@ mkdir -p /etc/v2ray
 mkdir -p /etc/lokasi
 touch /etc/xray/domain
 touch /etc/v2ray/domain
-touch /etc/xray/scdomain
-touch /etc/v2ray/scdomain
 touch /etc/lokasi/city
 touch /etc/loksi/isp
 mkdir -p /etc/per
@@ -187,10 +185,8 @@ echo ""
 if [[ $host == "1" ]]; then
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
-echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/v2ray/domain
-echo "$pp" > /etc/xray/scdomain
 echo "IP=$pp" > /var/lib/ipvps.conf
 echo ""
 elif [[ $host == "2" ]]; then
@@ -279,7 +275,7 @@ sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/notif.sh;chmod +x notif.sh;./notif.sh
 sleep 3
 clear
 #install limit xray
