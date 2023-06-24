@@ -211,7 +211,7 @@ wget -O add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add
 wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
 wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ns.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
-wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard"
+wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh"
 
 chmod +x menu-update
 chmod +x update
