@@ -1,3 +1,8 @@
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=T++A++R++A++P+-+K++U++H++I++N++G" />
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=++T++U++N++N++E++L++I++N++N++G" />
+</p>
 ## Installation Script By Tarap Kuhing Tunneling
 ## 1.
 Part 1: Update dan Upgrade
