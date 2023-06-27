@@ -227,7 +227,7 @@ echo -e "${BIYellow}□ CPU Usage           = ${BICyan}$cpu_usage"
 echo -e "${BIYellow}□ Clients Name        = ${BICyan}${Name}${NC}"
 echo -e "${BIYellow}□ Expired Script VPS  = ${RED}${certificate} ${BIYellow}day${NC}"
 echo -e "${BIYellow}□ Time Reboot VPS     = ${BICyan}00:00 ${GREEN}( Jam 12 Malam )${NC}"
-echo -e "${BIYellow}□ WHATSAPP            = ${IPurple}{ ${BIWhite}085754292950 ${IPurple}}${NC}"
+echo -e "${BIYellow}□ WHATSAPP            = ${IPurple}{ ${BIWhite}0${BIYellow}8${IPurple}5${RED}7${BICyan}5${NC}4${BIYellow}2${IPurple}9${BIWhite}2${RED}9${NC}5${BIYellow}0 ${IPurple}}${NC}"
 echo -e "${BIYellow}□ AutoScript By T.K.T = ${IPurple}( ${BICyan}TARAP ${BIYellow}KUHING ${BIWhite}TUNNELING ${IPurple})${NC}"
 
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
