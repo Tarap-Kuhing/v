@@ -177,7 +177,7 @@ TEXT="
 <code>Domain       : </code> <code>${domain}</code>
 <code>ISP           : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
-<code>Port TLS     : </code> <code>${tls}</code>
+<code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
 <code>Port GRPC    : </code> <code>${tls}</code>
 <code>User ID      : </code> <code>${uuid}</code>
@@ -217,7 +217,7 @@ echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc
 echo -e "$COLOR1 ${NC} ${WH}ISP           ${COLOR1}: ${WH}$ISP" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}City          ${COLOR1}: ${WH}$CITY" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}id            ${COLOR1}: ${WH}${uuid}" | tee -a /etc/log-create-user.log
@@ -239,7 +239,7 @@ echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
-echo -e ""
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -358,9 +358,9 @@ TEXT="
 <code>Domain       : </code> <code>${domain}</code>
 <code>ISP          : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
-<code>Port TLS     : </code> <code>${tls}</code>
+<code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
-<code>Port GRPC    : </code> <code>${tls}</code>
+<code>Port GRPC    : </code> <code>443</code>
 <code>User ID      : </code> <code>${uuid}</code>
 <code>AlterId      : 0</code>
 <code>Security     : auto</code>
@@ -398,9 +398,9 @@ echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc
 echo -e "$COLOR1 ${NC} ${WH}ISP           ${COLOR1}: ${WH}$ISP" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}City          ${COLOR1}: ${WH}$CITY" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}id            ${COLOR1}: ${WH}${uuid}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto" | tee -a /etc/log-create-user.log
@@ -420,7 +420,7 @@ echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
-echo -e ""
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -511,9 +511,9 @@ TEXT="
 <code>Domain       : </code> <code>${domain}</code>
 <code>ISP           : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
-<code>Port TLS     : </code> <code>${tls}</code>
+<code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
-<code>Port GRPC    : </code> <code>${tls}</code>
+<code>Port GRPC    : </code> <code>443</code>
 <code>User ID      : </code> <code>${uuid}</code>
 <code>AlterId      : 0</code>
 <code>Security     : auto</code>
@@ -552,9 +552,9 @@ echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc
 echo -e "$COLOR1 ${NC} ${WH}ISP           ${COLOR1}: ${WH}$ISP" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}City          ${COLOR1}: ${WH}$CITY" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}443}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}id            ${COLOR1}: ${WH}${uuid}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto" | tee -a /etc/log-create-user.log
@@ -580,7 +580,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
-echo -e ""
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -902,9 +902,9 @@ TEXT="
 <code>Domain       : </code> <code>${domain}</code>
 <code>ISP           : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
-<code>Port TLS     : </code> <code>${tls}</code>
+<code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
-<code>Port GRPC    : </code> <code>${tls}</code>
+<code>Port GRPC    : </code> <code>443</code>
 <code>User ID      : </code> <code>${uuid}</code>
 <code>AlterId      : 0</code>
 <code>Security     : auto</code>
@@ -960,7 +960,7 @@ echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
-echo -e ""
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
