@@ -162,7 +162,6 @@ mkdir -p /var/lib >/dev/null 2>&1
 echo "IP=" >> /var/lib/ipvps.conf
 clear
 echo ""
-#wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
@@ -275,7 +274,7 @@ sleep 2
 clear
 wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
-wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/notif;chmod +x notif;./notif
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/notif.sh && chmod +x notif.sh && ./notif.sh
 sleep 3
 clear
 #install limit xray
