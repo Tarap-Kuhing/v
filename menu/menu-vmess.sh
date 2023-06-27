@@ -87,7 +87,7 @@ tls="$(cat ~/log-install.txt | grep -w "Vmess WS TLS" | cut -d: -f2|sed 's/ //g'
 none="$(cat ~/log-install.txt | grep -w "Vmess WS none TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
 		read -rp "Name User: " -e user
@@ -96,7 +96,7 @@ echo -e "$COLOR1└────────────────────�
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
             echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-            echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
+            echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}• Add Vmess Account •              ${NC} $COLOR1 $NC"
             echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
             echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
             echo ""
@@ -179,7 +179,7 @@ TEXT="
 <code>CITY         : </code> <code>${CITY}</code>
 <code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
-<code>Port GRPC    : </code> <code>${tls}</code>
+<code>Port GRPC    : </code> <code>443</code>
 <code>User ID      : </code> <code>${uuid}</code>
 <code>AlterId      : 0</code>
 <code>Security     : auto</code>
@@ -210,7 +210,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}        • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}      • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -219,7 +219,7 @@ echo -e "$COLOR1 ${NC} ${WH}City          ${COLOR1}: ${WH}$CITY" | tee -a /etc/l
 echo -e "$COLOR1 ${NC} ${WH}Domain        ${COLOR1}: ${WH}${domain}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port TLS      ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Port none TLS ${COLOR1}: ${WH}80,8080" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}${tls}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port gRPC     ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}id            ${COLOR1}: ${WH}${uuid}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}alterId       ${COLOR1}: ${WH}0" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Security      ${COLOR1}: ${WH}auto" | tee -a /etc/log-create-user.log
@@ -391,7 +391,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}        • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}      • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -424,7 +424,7 @@ echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu uuid"
@@ -545,7 +545,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}                  ${COLBG1}${WH}• TRIAL VMESS •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                ${COLBG1}${WH}• TRIAL VMESS •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -585,7 +585,7 @@ echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/l
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu vmess"
@@ -661,6 +661,7 @@ systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     echo " Client Name : $user"
+    echo " Created     : $harini"
     echo " Expired On  : $exp4"
     echo ""
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -680,7 +681,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 		read -n 1 -s -r -p "Press any key to back on menu"
-        m-vmess
+        menu-vmess
 	fi
 
 	clear
@@ -701,6 +702,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 	done
 user=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i "/^#vmg $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vm $user $exp/,/^},{/d" /etc/xray/config.json
 clear
@@ -709,6 +711,7 @@ systemctl restart xray > /dev/null 2>&1
     echo " Vmess Account Deleted Successfully"
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo " Client Name : $user"
+    echo " Created     : $harini"
     echo " Expired On  : $exp"
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
@@ -789,7 +792,7 @@ done
 rm -rf /tmp/other.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                      ${WH}• TARAP KUHING TUNNELING •              $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                   ${WH}• TARAP KUHING TUNNELING •              $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -964,7 +967,7 @@ echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
@@ -985,7 +988,7 @@ echo -e " $COLOR1 $NC                                              ${NC} $COLOR1
 echo -e " $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}             ${WH}• TARAP KUHING TUNNELING •              $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •              $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
