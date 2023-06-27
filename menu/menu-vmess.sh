@@ -110,6 +110,7 @@ menu-vmess
 echo -e ""
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+harini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
@@ -196,7 +197,8 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
-<code>Expired On : $exp</code>
+<code>Created      : $harini</code>
+<code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
 
@@ -208,7 +210,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}   • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}        • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -236,16 +238,19 @@ echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /
 echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e ""
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on menu vmess"
+read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
 function add-v2ray(){
+clear
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 TIMES="10"
@@ -286,6 +291,7 @@ echo -e ""
 read -p "Masukan uuid: " uuid
 echo -e ""
 read -p "Expired (days): " masaaktif
+harini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
@@ -346,11 +352,11 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 TEXT="
 <code>──────────────────────</code>
-<code>    Xray/Vmess Account</code>
+<code>    Xray/Vmess Uuid Manual</code>
 <code>──────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
-<code>ISP           : </code> <code>${ISP}</code>
+<code>ISP          : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
 <code>Port TLS     : </code> <code>${tls}</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
@@ -372,7 +378,8 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
-<code>Expired On : $exp</code>
+<code>Created      : $harini</code>
+<code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
 
@@ -384,7 +391,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}   • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}   ${COLBG1}${WH}        • XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -412,6 +419,8 @@ echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /
 echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e ""
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -422,8 +431,9 @@ read -n 1 -s -r -p "Press any key to back on menu uuid"
 menu-uuid
 }
 function trial-vmess(){
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+clear
+ISP=$(cat /etc/lokasi/isp)
+CITY=$(cat /etc/lokasi/city)
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -434,6 +444,7 @@ none="$(cat ~/log-install.txt | grep -w "Vmess WS none TLS" | cut -d: -f2|sed 's
 user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 #uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
+harini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vm '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
@@ -494,7 +505,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 TEXT="
 <code>───────────────────────</code>
-<code>    Xray/Vmess Account</code>
+<code>    Xray/Vmess Account Trial</code>
 <code>───────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
@@ -520,7 +531,8 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
-<code>Expired On : $exp</code>
+<code>Created      : $harini</code>
+<code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
 
@@ -533,7 +545,7 @@ clear
 clear
 systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}              ${COLBG1}${WH}• TRIAL VMESS •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}                  ${COLBG1}${WH}• TRIAL VMESS •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Remarks       ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
@@ -567,6 +579,8 @@ echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e ""
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -578,6 +592,7 @@ read -n 1 -s -r -p "Press any key to back on menu vmess"
 menu-vmess
 }
 function renew-vmess(){
+clear
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -597,7 +612,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo ""
         read -n 1 -s -r -p "Press any key to back on menu"
-        m-vmess
+        menu-vmess
 	fi
  	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo -e "$COLOR1 ${NC} ${COLBG1}            ⇱ Renew VMESS ⇲             ${NC} $COLOR1 $NC"
@@ -622,6 +637,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i "s/#vm $user $exp/#vm $user $exp4/g" /etc/xray/config.json
 sed -i "s/#vmg $user $exp/#vmg $user $exp4/g" /etc/xray/config.json
 clear
@@ -632,6 +648,7 @@ TEXT="
 <b>DOMAIN   :</b> <code>${domain} </code>
 <b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$user </code>
+<b>Created  :</b>$harini</code>
 <b>EXPIRED  :</b> <code>$exp4 </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 "
@@ -649,7 +666,7 @@ systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
-    m-vmess
+    menu-vmess
 }
 function del-vmess(){
 clear
@@ -696,10 +713,11 @@ systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
-    m-vmess
+    menu-vmess
 }
 
 function cek-vmess(){
+clear
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -707,8 +725,9 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 domain=$(cat /etc/xray/domain)
-#systemctl restart xray
-#sleep 1
+harini=`date -d "0 days" +"%Y-%m-%d"`
+systemctl restart xray
+sleep 1
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '^#vm' | cut -d ' ' -f 2 | sort | uniq`);
@@ -752,6 +771,7 @@ TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>  ⚠️ XRAY VMESS NOTIF ⚠️</b>
 <b>         User Login</b>
+<b>       $harini</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN    :</b> <code>${domain} </code>
 <b>ISP & CITY:</b> <code>$ISP $CITY </code>
@@ -777,6 +797,12 @@ m-vmess
 }
 function list-vmess(){
 clear
+TIMES="10"
+CHATID=$(cat /etc/per/id)
+KEY=$(cat /etc/per/token)
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+ISP=$(cat /etc/xray/isp)
+CITY=$(cat /etc/xray/city)
 tls="$(cat ~/log-install.txt | grep -w "Vmess Ws Tls" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess Ws None Tls" | cut -d: -f2|sed 's/ //g')"
 NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
@@ -790,7 +816,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                 read -n 1 -s -r -p "Press any key to back on menu"
-        m-vmess
+        menu-vmess
 	fi
 	clear
 	echo ""
@@ -812,6 +838,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 clear
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
+harini=`date -d "0 days" +"%Y-%m-%d"`
 user=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 domain=$(cat /etc/xray/domain)
 uuid=$(grep -E "^#vmg " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
@@ -867,7 +894,42 @@ vmess_base643=$( base64 -w 0 <<< $vmess_json3)
 vmesslink1="vmess://$(echo $asu | base64 -w 0)"
 vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
+TEXT="
+<code>───────────────────────</code>
+<code>    Xray/Vmess Account Trial</code>
+<code>───────────────────────</code>
+<code>Remarks      : </code> <code>${user}</code>
+<code>Domain       : </code> <code>${domain}</code>
+<code>ISP           : </code> <code>${ISP}</code>
+<code>CITY         : </code> <code>${CITY}</code>
+<code>Port TLS     : </code> <code>${tls}</code>
+<code>Port NTLS    : </code> <code>80, 8080</code>
+<code>Port GRPC    : </code> <code>${tls}</code>
+<code>User ID      : </code> <code>${uuid}</code>
+<code>AlterId      : 0</code>
+<code>Security     : auto</code>
+<code>Network      : WS or gRPC</code>
+<code>Path         : </code> <code>/vmess</code>
+<code>Path Support : </code> <code>/https://bug.com/worryfree</code>
+<code>ServiceName  : </code> <code>vmess-grpc</code>
+<code>──────────────────────</code>
+<code>Link TLS     :</code> 
+<code>${vmesslink1}</code>
+<code>──────────────────────</code>
+<code>Link NTLS    :</code> 
+<code>${vmesslink2}</code>
+<code>──────────────────────</code>
+<code>Link GRPC    :</code> 
+<code>${vmesslink3}</code>
+<code>──────────────────────</code>
+<code>Created      : $harini</code>
+<code>Expired On   : $exp</code>
+<code>──────────────────────</code>
+"
+
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
+systemctl restart xray > /dev/null 2>&1
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}         ${COLBG1}${WH}• XRAY VMESS PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
@@ -897,6 +959,8 @@ echo -e "$COLOR1 ${NC} ${COLOR1}Link Websocket GRPC     ${WH}: ${NC}" | tee -a /
 echo -e "$COLOR1${NC}${WH}${vmesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created        ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e ""
 echo -e "$COLOR1 ${NC} ${WH}Expired On     ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
