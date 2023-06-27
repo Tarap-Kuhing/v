@@ -108,12 +108,11 @@ echo "Checking VPS"
 
 clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}TRIALL ${NC}"
+echo -e "       ${BIWhite}${UWhite}CREATE ACCOUNT UUID MANUAL ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Trial Account SSH & OVPN   "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account VMESS    "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Trial Account VLESS     "
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Trial Account TROJAN   "
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] UUID ACCOUNT VMESS ANUAL    "
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] UUID ACCOUNT VLESS ANUAL     "
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] UUID ACCOUNT TROJAN ANUAL   "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
@@ -121,10 +120,9 @@ echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; trial ;;
-2) clear ; trialvmess ;;
-3) clear ; trialvless ;;
-4) clear ; trialtrojan ;;
+1) clear ; add-v2ray ;;
+2) clear ; add-vls ;;
+3) clear ; add-trn ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "anda salah tekan cok" ; sleep 1 ; menu-trial ;;
