@@ -15,16 +15,14 @@ elif [[ -e /etc/centos-release ]]; then
 	OS=centos
 fi
 
-
-
-
 echo "Tools install...!"
 echo "Progress..."
-sleep 2
+sleep 0.5
 
 sudo apt update -y
 sudo apt update -y
 sudo apt dist-upgrade -y
+sudo apt install netfilter-persistent -y
 sudo apt-get remove --purge ufw firewalld -y 
 sudo apt-get remove --purge exim4 -y 
 
@@ -42,9 +40,9 @@ curl -sSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt-get install nodejs -y
 
 /etc/init.d/vnstat restart
-wget -q https://humdi.net/vnstat/vnstat-2.8.tar.gz
-tar -xvzf vnstat-2.8.tar.gz
-cd vnstat-2.8
+wget -q https://humdi.net/vnstat/vnstat-2.6.tar.gz
+tar zxvf vnstat-2.6.tar.gz
+cd vnstat-2.6
 ./configure --prefix=/usr --sysconfdir=/etc >/dev/null 2>&1 && make >/dev/null 2>&1 && make install >/dev/null 2>&1
 cd
 vnstat -u -i $NET
@@ -52,16 +50,13 @@ sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
 chown vnstat:vnstat /var/lib/vnstat -R
 systemctl enable vnstat
 /etc/init.d/vnstat restart
-rm -f /root/vnstat-2.8.tar.gz >/dev/null 2>&1
-rm -rf /root/vnstat-2.8 >/dev/null 2>&1
-
-
-fi
+rm -f /root/vnstat-2.6.tar.gz >/dev/null 2>&1
+rm -rf /root/vnstat-2.6 >/dev/null 2>&1
 
 sudo apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
 
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Dependencies successfully installed..."
-sleep 3
+sleep 1
 clear
 
