@@ -94,8 +94,8 @@ rm -rf menu-update
 rm -rf menu
 rm -rf m-bot
 rm -rf m-ip
-rm -rf menu-trial
 rm -rf menu-vmess
+rm -rf menu-uuid
 rm -rf menu-vless
 rm -rf menu-ssws
 rm -rf running
@@ -169,7 +169,7 @@ wget -O update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/updat
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
-wget -O menu-trial "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-trial.sh"
+wget -O menu-uuid "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-uuid.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh"
 wget -O menu-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssws.sh"
@@ -221,7 +221,7 @@ chmod +x update
 chmod +x m-ip
 chmod +x menu
 chmod +x m-bot
-chmod +x menu-trial
+chmod +x menu-uuid
 chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x menu-ssws
@@ -265,8 +265,6 @@ chmod +x add-ssws
 chmod +x add-v2ray
 chmod +x add-ns
 chmod +x issue
-chmod +x add-wireguard
-chmod +x updt
 
 clear
 echo -e ""
