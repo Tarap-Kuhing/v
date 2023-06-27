@@ -15,7 +15,7 @@ message="
 <code>ISP       : </code><code>${ISP}, ${CITY}</code>
 <code>RAM       : </code><code>${RAMMS}MB</code>
 <code>LINUX     : </code><code>${OS}</code>
-<code>TIME     : </code><code>${TIME}</code>
+<code>TIME      : </code><code>${TIME}</code>
 "
 
 curl -s -X POST "https://api.telegram.org/bot6208240566:AAFINY02Hij6uwZo1rbgSLoyb4qBeT4p7RA/sendmessage" \
