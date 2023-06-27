@@ -73,7 +73,6 @@ function add-vless(){
 clear
 ISP=$(cat /etc/lokasi/isp)
 CITY=$(cat /etc/lokasi/city)
-
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
@@ -103,12 +102,14 @@ clear
 			echo "A client with the specified name was already created, please choose another name."
 			echo ""
 			read -n 1 -s -r -p "Press any key to back on menu"
-			m-vless
+			menu-vless
 		fi
 	done
+echo -e ""
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\#vl '"$user $exp $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#vlg '"$user $exp"'\
@@ -148,6 +149,7 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vless3}</code>
 <code>──────────────────────</code>
+<code>Created      : $harini</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -193,6 +195,8 @@ echo -e "$COLOR1${NC}${WH}${vlesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created      ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -236,7 +240,7 @@ clear
 			echo "A client with the specified name was already created, please choose another name."
 			echo ""
 			read -n 1 -s -r -p "Press any key to back on menu"
-			m-vless
+			menu-vless
 		fi
 	done
 echo -e ""
@@ -244,6 +248,7 @@ read -p "Masukan (uuid): " uuid
 echo -e ""
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\#vl '"$user $exp $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#vlg '"$user $exp"'\
@@ -283,6 +288,7 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vless3}</code>
 <code>──────────────────────</code>
+<code>Created      : $harini</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -328,6 +334,8 @@ echo -e "$COLOR1${NC}${WH}${vlesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created      ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -352,6 +360,7 @@ user=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\#vl '"$user $exp $uuid"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#vlg '"$user $exp"'\
@@ -391,6 +400,7 @@ TEXT="
 <code>Link GRPC    :</code> 
 <code>${vless3}</code>
 <code>──────────────────────</code>
+<code>Created      : $harini</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -433,6 +443,8 @@ echo -e "$COLOR1${NC}${WH}${vlesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created      ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -463,7 +475,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vl " "/etc/xray/config.json")
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo ""
         read -n 1 -s -r -p "Press any key to back on menu"
-        m-vless
+        menu-vless
 	fi
  	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo -e "$COLOR1 ${NC} ${COLBG1}            ⇱ Renew VLESS ⇲             ${NC} $COLOR1 $NC"
@@ -488,16 +500,18 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i "s/#vl $user $exp/#vl $user $exp4/g" /etc/xray/config.json
 sed -i "s/#vlg $user $exp/#vlg $user $exp4/g" /etc/xray/config.json
 clear
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<b>   XRAY VLESS RENEW</b>
+<b>      XRAY VLESS RENEW</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
 <b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$user </code>
+<b>Created  :</b> <code>$harini</code>
 <b>EXPIRED  :</b> <code>$exp4 </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 "
@@ -515,7 +529,7 @@ systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
-    m-vless
+    menu-vless
 }
 function del-vless(){
 clear
@@ -529,7 +543,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vl " "/etc/xray/config.json")
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 		read -n 1 -s -r -p "Press any key to back on menu"
-        m-vless
+        menu-vless
 	fi
 
 	clear
@@ -553,6 +567,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vl " "/etc/xray/config.json")
 	sed -i "/^#vl $user $exp/,/^},{/d" /etc/xray/config.json
 	sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
 	clear
+    harini=`date -d "0 days" +"%Y-%m-%d"`
     clear
     systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -616,8 +631,9 @@ echo -e ""
 
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<b>  ⚠️ XRAY TROJAN NOTIF ⚠️</b>
+<b>  ⚠️ XRAY VLESS NOTIF ⚠️</b>
 <b>         User Login</b>
+<b>         $harini</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN    :</b> <code>${domain} </code>
 <b>ISP & CITY:</b> <code>$ISP $CITY </code>
@@ -638,7 +654,7 @@ echo -e "$COLOR1 ${NC}               ${WH}• $author •${NC}                 $
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 }
 function list-vless(){
 clear
@@ -654,7 +670,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vl " "/etc/xray/config.json")
 		echo ""
 		echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                 read -n 1 -s -r -p "Press any key to back on menu"
-        m-vless
+        menu-vless
 	fi
 
 	echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -675,7 +691,6 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vl " "/etc/xray/config.json")
 clear
 ISP=$(cat /etc/lokasi/isp)
 CITY=$(cat /etc/lokasi/city)
-
 user=$(grep -E "^#vl " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 domain=$(cat /etc/xray/domain)
 uuid=$(grep -E "^#vl " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
@@ -722,6 +737,8 @@ echo -e "$COLOR1${NC}${WH}${vlesslink3}${NC}"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created      ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}"
@@ -758,5 +775,5 @@ case $opt in
 6) clear ; list-vless ; exit ;;
 0) clear ; menu ; exit ;;
 x) clear ; menu ; exit ;;
-*) echo "salah tekan " ; sleep 1 ; mmeni-vless ;;
+*) echo "salah tekan " ; sleep 1 ; menu-vless ;;
 esac
