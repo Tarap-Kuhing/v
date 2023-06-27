@@ -103,16 +103,6 @@ rm -rf clearcache
 rm -rf menu-trgo
 rm -rf menu-trojan
 rm -rf menu-ssh
-rm -rf usernew
-rm -rf trial
-rm -rf renew
-rm -rf hapus
-rm -rf cek
-rm -rf member
-rm -rf delete
-rm -rf autokill
-rm -rf ceklim
-rm -rf tendang
 rm -rf menu-set
 rm -rf menu-domain
 rm -rf add-host
@@ -134,21 +124,6 @@ rm -rf menu-backup
 rm -rf backup
 rm -rf restore
 rm -rf jam
-rm -rf add-v2ray
-rm -rf trialvmess
-rm -rf renew-ws
-rm -rf del-ws
-rm -rf cek-ws
-rm -rf add-ssws
-rm -rf trialvless
-rm -rf renew-vless
-rm -rf del-vless
-rm -rf cek-vless
-rm -rf add-tr
-rm -rf trialtrojan
-rm -rf del-tr
-rm -rf renew-tr
-rm -rf cek-tr
 rm -rf addtrgo
 rm -rf trialtrojango
 rm -rf deltrgo
@@ -156,16 +131,12 @@ rm -rf renewtrgo
 rm -rf cektrgo
 rm -rf m-sshovpn
 rm -rf cf
-rm -rf add-vmess
 rm -rf menu-bckp
 rm -rf add-ns
 rm -rf issue
-rm -rf add-wireguard
-rm -rf updt
 
 cd /usr/bin
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
-wget -O update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/update.sh"
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
@@ -199,9 +170,6 @@ wget -O menu-backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/
 wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh"
 wget -O jam "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/jam.sh"
-wget -O trialvmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvmess.sh"
-wget -O trialvless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialvless.sh"
-wget -O trialtrojan "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojan.sh"
 wget -O addtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/addtrgo.sh"
 wget -O trialtrojango "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/trialtrojango.sh"
 wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/deltrgo.sh"
@@ -209,15 +177,9 @@ wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/re
 wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cektrgo.sh"
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
-wget -O add-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-ssws.sh"
-wget -O add-v2ray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/add-v2ray.sh"
-wget -O wireguard "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/wireguard/add-wireguard.sh"
-wget -O add-ns "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/add-ns.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
-wget -O updt "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/upt"
 
 chmod +x menu-update
-chmod +x update
 chmod +x m-ip
 chmod +x menu
 chmod +x m-bot
@@ -251,9 +213,6 @@ chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
-chmod +x trialvmess
-chmod +x trialvless
-chmod +x trialtrojan
 chmod +x addtrgo
 chmod +x trialtrojango
 chmod +x deltrgo
@@ -261,9 +220,6 @@ chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
 chmod +x menu-bckp
-chmod +x add-ssws
-chmod +x add-v2ray
-chmod +x add-ns
 chmod +x issue
 
 clear
