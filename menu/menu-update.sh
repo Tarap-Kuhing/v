@@ -89,7 +89,7 @@ clear
 echo -e "\e[0;32mGetting New Version Script..\e[0m"
 sleep 1
 echo ""
-rm -rf update
+rm -rf menu-theme
 rm -rf menu-update
 rm -rf menu
 rm -rf m-bot
@@ -136,6 +136,7 @@ rm -rf add-ns
 rm -rf issue
 
 cd /usr/bin
+wget -O menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-theme.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
@@ -219,7 +220,7 @@ chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x cf
-chmod +x menu-bckp
+chmod +x menu-theme
 chmod +x issue
 
 clear
