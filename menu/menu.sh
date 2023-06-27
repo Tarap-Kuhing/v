@@ -237,7 +237,7 @@ echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${IPurple}XRAY ${NC}"
 echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 
-echo -e "${BIYellow}JANGAN LUPA KAWAN TETAP SLALU BERSYUKUR KEADAAN APAPUN${NC}" 
+echo -e "${BIYellow}JANGAN ${IPurple}LUPA ${RED}KAWAN ${BICyan}TETAP ${NC}SLALU ${BIYellow}BERSYUKUR ${IPurple}KEADAAN ${BIWhite}APAPUN${NC}" 
 
 echo -e "${BIYellow}┌──────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIYellow}│  \033[0m ${BOLD}${YELLOW}SSH     VMESS       VLESS      TROJAN $NC" 
