@@ -171,11 +171,11 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 TEXT="
 <code>──────────────────────</code>
-<code>    Xray/Vmess Account</code>
+<code>    XRAY/VMESS CREATED ACCOUNT</code>
 <code>──────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
-<code>ISP           : </code> <code>${ISP}</code>
+<code>ISP          : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
 <code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
@@ -185,7 +185,6 @@ TEXT="
 <code>Security     : auto</code>
 <code>Network      : WS or gRPC</code>
 <code>Path         : </code> <code>/vmess</code>
-<code>Path Support : </code> <code>https://bug.com/worryfree</code>
 <code>ServiceName  : </code> <code>vmess-grpc</code>
 <code>──────────────────────</code>
 <code>Link TLS     :</code> 
@@ -198,6 +197,7 @@ TEXT="
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
 <code>Created      : $harini</code>
+<code>──────────────────────</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -352,7 +352,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 TEXT="
 <code>──────────────────────</code>
-<code>    Xray/Vmess Uuid Manual</code>
+<code>  XRAY/VMSSS CREATED ACCOUNT UUID  </code>
 <code>──────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
@@ -366,7 +366,6 @@ TEXT="
 <code>Security     : auto</code>
 <code>Network      : WS or gRPC</code>
 <code>Path         : </code> <code>/vmess</code>
-<code>Path Support : </code> <code>https://bug.com/worryfree</code>
 <code>ServiceName  : </code> <code>vmess-grpc</code>
 <code>──────────────────────</code>
 <code>Link TLS     :</code> 
@@ -379,6 +378,7 @@ TEXT="
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
 <code>Created      : $harini</code>
+<code>──────────────────────</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -505,7 +505,7 @@ vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 
 TEXT="
 <code>───────────────────────</code>
-<code>    Xray/Vmess Account Trial</code>
+<code>    XRAY/VMESS TRIAL ACCOUNT </code>
 <code>───────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
@@ -532,6 +532,7 @@ TEXT="
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
 <code>Created      : $harini</code>
+<code>──────────────────────</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
@@ -643,7 +644,7 @@ sed -i "s/#vmg $user $exp/#vmg $user $exp4/g" /etc/xray/config.json
 clear
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
-<b>   XRAY VMESS RENEW</b>
+<b>      XRAY VMESS RENEW</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
 <b>ISP      :</b> <code>$ISP $CITY </code>
@@ -899,11 +900,11 @@ vmesslink2="vmess://$(echo $ask | base64 -w 0)"
 vmesslink3="vmess://$(echo $grpc | base64 -w 0)"
 TEXT="
 <code>───────────────────────</code>
-<code>    Xray/Vmess Account Trial</code>
+<code>      XRAY/VMESS LIST ACCOUNT    </code>
 <code>───────────────────────</code>
 <code>Remarks      : </code> <code>${user}</code>
 <code>Domain       : </code> <code>${domain}</code>
-<code>ISP           : </code> <code>${ISP}</code>
+<code>ISP          : </code> <code>${ISP}</code>
 <code>CITY         : </code> <code>${CITY}</code>
 <code>Port TLS     : </code> <code>443</code>
 <code>Port NTLS    : </code> <code>80, 8080</code>
@@ -913,7 +914,6 @@ TEXT="
 <code>Security     : auto</code>
 <code>Network      : WS or gRPC</code>
 <code>Path         : </code> <code>/vmess</code>
-<code>Path Support : </code> <code>/https://bug.com/worryfree</code>
 <code>ServiceName  : </code> <code>vmess-grpc</code>
 <code>──────────────────────</code>
 <code>Link TLS     :</code> 
@@ -926,6 +926,7 @@ TEXT="
 <code>${vmesslink3}</code>
 <code>──────────────────────</code>
 <code>Created      : $harini</code>
+<code>──────────────────────</code>
 <code>Expired On   : $exp</code>
 <code>──────────────────────</code>
 "
