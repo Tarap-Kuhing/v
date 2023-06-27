@@ -247,7 +247,7 @@ echo -e "${BIYellow}└───────────────────
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}|    [${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"    "     ${BICyan}[${BIWhite}06${BICyan}] XRAY UUID MANUAL${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}  │"
+echo -e " ${BICyan}|    [${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"    "     ${BICyan}[${BIWhite}06${BICyan}] XRAY UUID MANUAL${BICyan}│"
 echo -e " ${BICyan}|    [${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}07${BICyan}] BACKUP    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}  │"
 echo -e " ${BICyan}|    [${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}08${BICyan}] SETTING   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}  │"
 echo -e " ${BICyan}|    [${BIWhite}04${BICyan}] TROJAN  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}09${BICyan}] RUNNING            │"
@@ -280,7 +280,7 @@ case $opt in
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
 5) clear ; menu-ssws ;;
-6) clear ; menu-trial ;;
+6) clear ; menu-uuid ;;
 7) clear ; menu-backup ;;
 8) clear ; menu-set ;;
 9) clear ; running ;;
@@ -290,7 +290,6 @@ case $opt in
 13) clear ; clearcache ;;
 14) clear ; menu-update ;;
 15) clear ; menu-bckp ;;
-16) clear ; wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/updt.sh && chmod +x updt.sh && ./updt.sh && rm -f /root/updt.sh ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
