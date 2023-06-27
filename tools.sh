@@ -36,22 +36,22 @@ sudo apt install -y screen curl jq bzip2 gzip coreutils rsyslog iftop \
  socat cron bash-completion ntpdate xz-utils sudo apt-transport-https \
  gnupg2 dnsutils lsb-release chrony
 
-curl -sSL https://deb.nodesource.com/setup_16.x | bash - 
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+apt-get install -y nodejs
 
 /etc/init.d/vnstat restart
-wget -q https://humdi.net/vnstat/vnstat-2.6.tar.gz
-tar zxvf vnstat-2.6.tar.gz
-cd vnstat-2.6
-./configure --prefix=/usr --sysconfdir=/etc >/dev/null 2>&1 && make >/dev/null 2>&1 && make install >/dev/null 2>&1
-cd
-vnstat -u -i $NET
-sed -i 's/Interface "'""eth0""'"/Interface "'""$NET""'"/g' /etc/vnstat.conf
-chown vnstat:vnstat /var/lib/vnstat -R
-systemctl enable vnstat
-/etc/init.d/vnstat restart
-rm -f /root/vnstat-2.6.tar.gz >/dev/null 2>&1
-rm -rf /root/vnstat-2.6 >/dev/null 2>&1
+wget https://humdi.net/vnstat/vnstat-2.8.tar.gz
+tar -xvzf vnstat-2.8.tar.gz
+cd vnstat-2.8
+./configure --prefix=/usr --sysconfdir=/etc >/dev/null 2>&1
+sudo make
+sudo make install
+vnstat -v
+sudo cp -v examples/systemd/vnstat.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable vnstat sudo systemctl start vnstat
+rm -f /root/vnstat-2.8.tar.gz >/dev/null 2>&1
+rm -rf /root/vnstat-2.8 >/dev/null 2>&1
 
 sudo apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
 
