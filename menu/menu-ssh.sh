@@ -139,6 +139,7 @@ clear
 clear
 clear
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
@@ -147,10 +148,11 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 TEXT="
 <code>──────────────────</code>
-<code>    SSH OVPN Premium Account   </code>
+<code>    SSH OVPN CREATED ACCOUNT   </code>
 <code>──────────────────</code>
 <code>Username        : </code> <code>$Login</code>
 <code>Password        : </code> <code>$Pass</code>
+<code>Created         : </code> <code>$harini</code>
 <code>Expired         : </code> <code>$exp</code>
 <code>──────────────────</code>
 <code>IP              : </code> <code>$IP</code>
@@ -189,11 +191,12 @@ if [[ ! -z "${PID}" ]]; then
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}    ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}         ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Created    ${COLOR1}: ${WH}$harini"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -228,16 +231,17 @@ echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | te
 echo -e "$COLOR1${NC}${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}             ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 else
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}    ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}       ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Created    ${COLOR1}: ${WH}$harini"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -272,7 +276,7 @@ echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | te
 echo -e "$COLOR1${NC}${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}              ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 fi
 echo "" | tee -a /etc/log-create-user.log
@@ -313,6 +317,7 @@ OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '
 
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
+harini=`date -d "0 days" +"%Y-%m-%d"`
 Pass=1
 echo Ping Host
 echo Create Akun: $Login
@@ -332,10 +337,11 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 TEXT="
 <code>──────────────────</code>
-<code>    SSH OVPN Premium Account   </code>
+<code>    SSH OVPN TRIAL ACCOUNT   </code>
 <code>──────────────────</code>
 <code>Username        : </code> <code>$Login</code>
 <code>Password        : </code> <code>$Pass</code>
+<code>Created         : </code> <code>$harini</code>
 <code>Expired         : </code> <code>$exp</code>
 <code>──────────────────</code>
 <code>IP              : </code> <code>$IP</code>
@@ -373,11 +379,12 @@ if [[ ! -z "${PID}" ]]; then
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}    ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}        ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Created    ${COLOR1}: ${WH}$harini"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -412,16 +419,17 @@ echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | te
 echo -e "$COLOR1${NC}${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}               ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 else
 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}    ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}       ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Created    ${COLOR1}: ${WH}$harini"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -456,7 +464,7 @@ echo -e "$COLOR1 ${NC}  ${WH}           Payload WS                   ${NC}" | te
 echo -e "$COLOR1${NC}${WH}GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
-echo -e "$COLOR1 ${NC}           ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}              ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 fi
 echo "" | tee -a /etc/log-create-user.log
@@ -476,7 +484,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#ssh " "/etc/xray/ssh")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1${NC}${COLBG1}              ${WH}• RENEW USERS •             ${NC}$COLOR1$NC"
+echo -e "$COLOR1${NC}${COLBG1}               ${WH}• RENEW USERS •             ${NC}$COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo ""
@@ -488,7 +496,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu-ssh
 fi
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1${NC}${COLBG1}              ${WH}• RENEW USERS •             ${NC}$COLOR1$NC"
+echo -e "$COLOR1${NC}${COLBG1}               ${WH}• RENEW USERS •             ${NC}$COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo ""	
@@ -516,6 +524,7 @@ Expiration=$(date -u --date="1970-01-01 $Expire_On sec GMT" +%Y/%m/%d)
 Expiration_Display=$(date -u --date="1970-01-01 $Expire_On sec GMT" '+%d %b %Y')
 passwd -u $User
 usermod -e  $Expiration $User
+harini=`date -d "0 days" +"%Y-%m-%d"`
 egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 clear
@@ -592,6 +601,11 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu-ssh
 }
 function cekconfig(){
+clear
+TIMES="10"
+CHATID=$(cat /etc/per/id)
+KEY=$(cat /etc/per/token)
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 ISP=$(cat /etc/lokasi/isp)
@@ -641,16 +655,60 @@ else
 read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 fi
 done
+harini=`date -d "0 days" +"%Y-%m-%d"`
 Login=$(grep -E "^#ssh " "/etc/xray/ssh" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#ssh " "/etc/xray/ssh" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 Pass=$(grep -E "^#ssh " "/etc/xray/ssh" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
+clear
+TEXT="
+<code>──────────────────</code>
+<code>    SSH OVPN CEK USER ACCOUNT   </code>
+<code>──────────────────</code>
+<code>Username        : </code> <code>$Login</code>
+<code>Password        : </code> <code>$Pass</code>
+<code>Created         : </code> <code>$harini</code>
+<code>Expired         : </code> <code>$exp</code>
+<code>──────────────────</code>
+<code>IP              : </code> <code>$IP</code>
+<code>ISP             : </code> <code>$ISP </code>
+<code>CITY            : </code> <code>$CITY</code>
+<code>Host            : </code> <code>$domen</code>
+<code>Host Slowdns    : </code> <code>$sldomain</code>
+<code>Pub Key         : </code> <code> $slkey</code>
+<code>Port OpenSSH    : </code> <code>$opensh</code>
+<code>Port Dropbear   : </code> <code>$db</code>
+<code>Port DNS        : </code> <code>80, 443,53</code> 
+<code>Port SSH WS     : </code> <code>80, 8080</code>
+<code>Port SSH SSL WS : </code> <code>$wsssl</code>
+<code>Port SSL/TLS    : </code> <code>8443,8880</code>
+<code>Port OVPN WS SSL: </code> <code>2086</code>
+<code>Port OVPN SSL   : </code> <code>990</code>
+<code>Port OVPN TCP   : </code> <code>$ovpn</code>
+<code>Port OVPN UDP   : </code> <code>$ovpn2</code>
+<code>Proxy Squid     : </code> <code>3128</code>
+<code>BadVPN UDP      : </code> <code>7100, 7300, 7300</code>
+<code>───────────────────</code>
+<code>SSH UDP         :</code> <code>$domen:100-200@$Login:$Pass</code>
+<code>Payload WS      : </code> <code>GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]</code>
+<code>───────────────────</code>
+<code>OpenVPN SSL     : </code> https://$domen:81/ssl.ovpn
+<code>OpenVPN TCP     : </code> https://$domen:81/tcp.ovpn
+<code>OpenVPN UDP     : </code> https://$domen:81/udp.ovpn
+<code>───────────────────</code>
+<code>      TARAP KUHING TUNNELING  </code>
+<code>───────────────────</code>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 
+clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 ${NC}    ${COLBG1}${WH}• SSH Account Premium•              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 $NC  ${WH}Created    ${COLOR1}: ${WH}$harini"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
@@ -693,7 +751,7 @@ menu-ssh
 function hapuslama(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}• MEMBER SSH •                 ${NC}$COLOR1$NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}• MEMBER SSH •                  ${NC}$COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo "USERNAME          EXP DATE          STATUS"
@@ -806,18 +864,18 @@ rm -f /tmp/vpn-login-tcp.txt
 rm -f /tmp/vpn-login-udp.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1${NC}${COLBG1}                       ${WH}• $author •              ${NC}$COLOR1$NC"
+echo -e "$COLOR1${NC}${COLBG1}            ${WH}• TARAP KUHING TUNNELING •              ${NC}$COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
-m-sshovpn
+menu-ssh
 }
 
 
 function member(){
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1${NC}${COLBG1}                 ${WH}• MEMBER SSH •                 ${NC}$COLOR1$NC"
+echo -e "$COLOR1${NC}${COLBG1}                  ${WH}• MEMBER SSH •                  ${NC}$COLOR1$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo "USERNAME          EXP DATE          STATUS"
@@ -848,7 +906,7 @@ function delete(){
 clear
                hariini=`date +%d-%m-%Y`
                echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-               echo -e "$COLOR1${NC}${COLBG1}               ${WH}• Auto Delete •              ${NC}$COLOR1$NC"
+               echo -e "$COLOR1${NC}${COLBG1}                ${WH}• Auto Delete •                  ${NC}$COLOR1$NC"
                echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
                echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
                echo "                    Thank you for removing the EXPIRED USERS"
@@ -885,7 +943,7 @@ clear
                done
                echo " "
                echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-               echo -e "$COLOR1${NC}${COLBG1}                       ${WH}• $author •              ${NC}$COLOR1$NC"
+               echo -e "$COLOR1${NC}${COLBG1}            ${WH}• TARAP KUHING TUNNELING •              ${NC}$COLOR1$NC"
                echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
                read -n 1 -s -r -p "Press any key to back on menu"
@@ -1018,7 +1076,7 @@ menu-ssh
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}• SSH PANEL MENU •              ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• SSH PANEL MENU •              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}
  $COLOR1 $NC   ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD SSH         ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}MEMBER CONFIG${NC}     $COLOR1 $NC
@@ -1034,7 +1092,7 @@ echo -e " $COLOR1┌────────────────────
  $COLOR1 $NC   ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}                              $COLOR1 $NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}             ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo "" | tee -a /etc/log-create-user.log
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
