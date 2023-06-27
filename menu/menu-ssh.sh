@@ -842,7 +842,7 @@ echo "Account number: $JUMLAH user"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "Press any key to back on menu"
 
-m-sshovpn
+menu-ssh
 }
 function delete(){
 clear
