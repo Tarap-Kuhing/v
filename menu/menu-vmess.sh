@@ -418,8 +418,8 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}• TARAP KUHING TUNNELING •${NC}                 $COLOR1 $NC" | tee -a /etc/log-create-user.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press any key to back on menu vmess"
-menu-vmess
+read -n 1 -s -r -p "Press any key to back on menu uuid"
+menu-uuid
 }
 function trial-vmess(){
 ISP=$(cat /etc/xray/isp)
