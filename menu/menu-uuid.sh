@@ -110,9 +110,9 @@ clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}CREATE ACCOUNT UUID MANUAL ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] UUID ACCOUNT VMESS ANUAL    "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] UUID ACCOUNT VLESS ANUAL     "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] UUID ACCOUNT TROJAN ANUAL   "
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] UUID ACCOUNT VMESS MANUAL    "
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] UUID ACCOUNT VLESS MANUAL     "
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] UUID ACCOUNT TROJAN MANUAL   "
 
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
