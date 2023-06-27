@@ -281,7 +281,8 @@ wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
-wget -O menu-uuid "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-uuid.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh"
+wget -O menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-theme.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-vless.sh"
 wget -O menu-ssws "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-ssws.sh"
@@ -321,6 +322,7 @@ chmod +x menu-update
 chmod +x menu
 chmod +x m-bot
 chmod +x m-ip
+chmod +x menu-theme
 chmod +x menu-uuid
 chmod +x menu-vmess
 chmod +x menu-vless
