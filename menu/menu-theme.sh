@@ -81,7 +81,7 @@ echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read colormenu
 case $colormenu in
 01 | 1)
 clear
-echo "blue" >/etc/alexxa/theme/color.conf
+echo "blue" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BLUE THEME •                 ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -96,7 +96,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 02 | 2)
 clear
-echo "red" >/etc/alexxa/theme/color.conf
+echo "red" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• RED THEME •                  ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -111,7 +111,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 03 | 3)
 clear
-echo "yellow" >/etc/alexxa/theme/color.conf
+echo "yellow" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• YELLOW THEME •                ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -126,7 +126,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 04 | 4)
 clear
-echo "cyan" >/etc/alexxa/theme/color.conf
+echo "cyan" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• CYAN THEME •                 ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -141,7 +141,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 05 | 5)
 clear
-echo "green" >/etc/alexxa/theme/color.conf
+echo "green" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• GREEN THEME •                 ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -156,7 +156,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 06 | 6)
 clear
-echo "magenta" >/etc/alexxa/theme/color.conf
+echo "magenta" >/etc/kuhing/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}               ${WH}• MAGENTA THEME •               ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
