@@ -166,7 +166,7 @@ clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
 clear
-wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
+wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/api;chmod +x api;./api
 sleep 2
 clear
 wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/kuhing;chmod +x kuhing;./kuhing
