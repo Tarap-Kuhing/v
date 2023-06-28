@@ -136,6 +136,7 @@ rm -rf add-ns
 rm -rf issue
 
 cd /usr/bin
+wget -O add-xray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/add-xray.sh"
 wget -O menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-theme.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
 wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu.sh"
@@ -180,6 +181,7 @@ wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
 
+chmod +x add-xray
 chmod +x menu-update
 chmod +x m-ip
 chmod +x menu
