@@ -72,7 +72,7 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
-new_version=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/vn/main/versi | grep $version )
+new_version=$( curl sS https://raw.githubusercontent.com/Tarap-Kuhing/v/main/versi | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
 sts="${Info2}"
@@ -134,6 +134,7 @@ rm -rf cf
 rm -rf menu-bckp
 rm -rf add-ns
 rm -rf issue
+rm -rf rclone
 
 cd /usr/bin
 wget -O add-xray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/add-xray.sh"
@@ -180,6 +181,7 @@ wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/xray/cekt
 wget -O cf "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/cf.sh"
 wget -O menu-bckp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-bckp.sh"
 wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/issue.net"
+wget -O rclone "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/rclone.conf"
 
 chmod +x add-xray
 chmod +x menu-update
@@ -224,6 +226,7 @@ chmod +x cektrgo
 chmod +x cf
 chmod +x menu-theme
 chmod +x issue
+chmod +x rclone
 
 clear
 echo -e ""
