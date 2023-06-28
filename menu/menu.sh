@@ -298,7 +298,7 @@ case $opt in
 11) clear ; m-bot ;;
 12) clear ; m-ip ;;
 13) clear ; clearcache ;;
-14) clear ; menu-update ;;
+14) clear ; wget -q https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh;chmod +x menu-update.sh;./menu-update.sh ;;
 15) clear ; menu-bckp ;;
 16) clear ; menu-theme ;;
 0) clear ; menu ;;
