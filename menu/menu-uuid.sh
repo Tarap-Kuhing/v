@@ -120,10 +120,10 @@ echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; add-v2ray ;;
+1) clear ; add-xray ;;
 2) clear ; add-vls ;;
 3) clear ; add-trn ;;
 0) clear ; menu ;;
 x) exit ;;
-*) echo "anda salah tekan cok" ; sleep 1 ; menu-trial ;;
+*) echo "anda salah tekan cok" ; sleep 1 ; menu-uuid ;;
 esac
