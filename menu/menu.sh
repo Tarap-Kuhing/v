@@ -1,4 +1,14 @@
 #!/bin/bash
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+###########- COLOR CODE -##############
+colornow=$(cat /etc/kuhing/theme/color.conf)
+NC="\e[0m"
+RED="\033[0;31m"
+COLOR1="$(cat /etc/kuhing/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/kuhing/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+WH='\033[1;37m'
+###########- END COLOR CODE -##########
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -55,7 +65,6 @@ Exp="\e[36mExpired\033[0m"
 else
 Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
 fi
-
 # =========================================
 vmc=$(grep -c -E "^#vmg " "/etc/xray/config.json")
 # TOTAL ACC CREATE  VLESS WS
@@ -213,36 +222,37 @@ export sem=$( curl -s https://raw.githubusercontent.com/Tarap-Kuhing/v/main/vers
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+clear
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${BIYellow}                     ⇱ INFORMASI VPS ⇲                        ${NC}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e "${BIYellow}□ Server Uptime       = ${BICyan}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
-echo -e "${BIYellow}□ Current Time        = ${BICyan}$( date -d "0 days" +"%d-%m-%Y | %X" )${NC}"
+echo -e "${BIYellow}□ Current Time        = ${BICyan}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
 echo -e "${BIYellow}□ Operating System    = ${BICyan}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
 echo -e "${BIYellow}□ Current Domain      = ${BICyan}$( cat /etc/xray/domain )${NC}"
 echo -e "${BIYellow}□ NS Domain           = ${BICyan}$( cat /etc/xray/dns )${NC}"
-echo -e "${BIYellow}□ Jumlah Ram          = ${BICyan}${totalram}MB"
-echo -e "${BIYellow}□ CPU Usage           = ${BICyan}$cpu_usage"
+echo -e "${BIYellow}□ Jumlah Ram          = ${BICyan}${totalram}MB${NC}"
+echo -e "${BIYellow}□ CPU Usage           = ${BICyan}$cpu_usage${NC}"
 echo -e "${BIYellow}□ Clients Name        = ${BICyan}${Name}${NC}"
 echo -e "${BIYellow}□ Expired Script VPS  = ${RED}${certificate} ${BIYellow}day${NC}"
-echo -e "${BIYellow}□ Time Reboot VPS     = ${BICyan}00:00 ${GREEN}( Jam 12 Malam )${NC}"
+echo -e "${BIYellow}□ Time Reboot VPS     = ${BICyan}00:00 ${IPurple}( ${BIYellow}Jam ${RED}12 ${BIWhite}Malam ${IPurple})${NC}"
 echo -e "${BIYellow}□ WHATSAPP            = ${IPurple}{ ${BIWhite}0${BIYellow}8${IPurple}5${RED}7${BICyan}5${NC}4${BIYellow}2${IPurple}9${BIWhite}2${RED}9${NC}5${BIYellow}0 ${IPurple}}${NC}"
 echo -e "${BIYellow}□ AutoScript By T.K.T = ${IPurple}( ${BICyan}TARAP ${BIYellow}KUHING ${BIWhite}TUNNELING ${IPurple})${NC}"
 
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                  ${BIWhite}TARAP ${BIYellow}KUHING ${BICyan}TUNNELING ${NC}"
-echo -e "${BICyan} | ${NC}"
+echo -e " ${BICyan}┌─────────────────────────────────────────────────────┐${NC}"
+echo -e " ${BICyan}│                  ${BIWhite}TARAP ${BIYellow}KUHING ${BICyan}TUNNELING ${NC}"
+echo -e " ${BICyan}│${NC}"
 echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${IPurple}XRAY ${NC}"
 echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS ${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 
 echo -e "${BIYellow}JANGAN ${IPurple}LUPA ${RED}KAWAN ${BICyan}TETAP ${NC}SLALU ${BIYellow}BERSYUKUR ${IPurple}KEADAAN ${BIWhite}APAPUN${NC}" 
 
-echo -e "${BIYellow}┌──────────────────────────────────────────────────┐${NC}" 
+echo -e "${BIYellow}┌────────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIYellow}│  \033[0m ${BOLD}${YELLOW}SSH     VMESS       VLESS      TROJAN $NC" 
 echo -e "${BIYellow}│  \033[0m ${Blue} $ssh1        $vmc           $vlx          $trx   $NC" 
-echo -e "${BIYellow}└──────────────────────────────────────────────────┘${NC}" 
+echo -e "${BIYellow}└────────────────────────────────────────────────────┘${NC}" 
   
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
