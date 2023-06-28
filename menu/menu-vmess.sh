@@ -251,8 +251,8 @@ menu-vmess
 }
 function add-xray(){
 clear
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+ISP=$(cat /etc/lokasi/isp)
+CITY=$(cat /etc/loaksi/city)
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
