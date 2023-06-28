@@ -140,7 +140,7 @@ cd /usr/bin
 wget -O add-xray "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/add-xray.sh"
 wget -O menu-theme "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-theme.sh"
 wget -O menu-update "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-update.sh"
-wget -O menu "https://raw.githubusercontent.com/jambanbkn/T.k.T/main/menu.sh?token=GHSAT0AAAAAACD6ECPYHDHMS2BJDBWHJ2OUZE4DJ5A"
+wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu.sh"
 wget -O m-bot "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-bot.sh"
 wget -O m-ip "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/m-ip.sh"
 wget -O menu-uuid "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/menu/menu-uuid.sh"
