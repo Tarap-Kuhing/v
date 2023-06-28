@@ -249,7 +249,7 @@ echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
-function add-v2ray(){
+function add-xray(){
 clear
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
