@@ -15,14 +15,16 @@ elif [[ -e /etc/centos-release ]]; then
 	OS=centos
 fi
 
-echo "           ${tyblue}Tools install...!${NC}"
-echo "                  \e[1;33mProgress...\e[0m"
-sleep 0.5
+
+
+
+echo "Tools install...!"
+echo "Progress..."
+sleep 2
 
 sudo apt update -y
 sudo apt update -y
 sudo apt dist-upgrade -y
-sudo apt install netfilter-persistent -y
 sudo apt-get remove --purge ufw firewalld -y 
 sudo apt-get remove --purge exim4 -y 
 
@@ -53,10 +55,13 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz >/dev/null 2>&1
 rm -rf /root/vnstat-2.6 >/dev/null 2>&1
 
+
+fi
+
 sudo apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
 
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Dependencies successfully installed..."
-sleep 1
+sleep 3
 clear
 
