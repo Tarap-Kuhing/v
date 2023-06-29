@@ -10,7 +10,7 @@ COLBG1="$(cat /etc/kuhing/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ /
 ###########- END COLOR CODE -##########
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps > /root/tmp
+    curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -28,7 +28,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -45,7 +45,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Tarap-Kuhing/ip/main/vps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -71,9 +71,9 @@ fi
 
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
-domainlama=`cat /etc/xray/domain`
+domain=`cat /etc/xray/domain`
 else
-domainlama=`cat /etc/v2ray/domain`
+domain=`cat /etc/xray/domain`
 fi
 
 clear
@@ -84,8 +84,6 @@ echo -e ""
 echo -e "[ ${green}INFO${NC} ] Start " 
 sleep 0.5
 systemctl stop nginx
-domain=`cat /etc/xray/domain`
-domain=`cat /etc/v2ray/domain`
 domain=$(cat /var/lib/ipvps.conf | cut -d'=' -f2)
 Cek=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
 if [[ ! -z "$Cek" ]]; then
@@ -98,19 +96,14 @@ sleep 1
 fi
 echo -e "[ ${green}INFO${NC} ] Starting renew cert... " 
 sleep 2
-/root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
-/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 >/dev/null 2>&1
-/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc >/dev/null 2>&1
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 echo -e "[ ${green}INFO${NC} ] Renew cert done... " 
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Starting service $Cek " 
 sleep 2
-echo "$domain" > /root/domain
-echo "$domain" > /etc/v2ray/domain
-echo "$domain" >/etc/xray/domain
-echo "$domain" >/etc/xray/scdomain
-echo "$domain" >/etc/v2ray/scdomain
+echo $domain > /etc/xray/domain
 systemctl restart $Cek
 systemctl restart nginx
 echo -e "[ ${green}INFO${NC} ] All finished... " 
