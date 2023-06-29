@@ -98,6 +98,7 @@ cp -r /etc/gshadow /root/backup/ &> /dev/null
 cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
 cp -r /var/lib/ /root/backup &> /dev/null
 cp -r /etc/xray /root/backup/xray &> /dev/null
+cp -r /etc/lokasi /root/backup/lokasi
 cp -r /root/per backup/per &> /dev/null
 cp -r /etc/slowdns backup/slowdns &> /dev/null
 cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
@@ -243,6 +244,7 @@ cp -r /root/backup /var/lib/ &> /dev/null
 #cp -r /root/backup/wireguard /etc/ &> /dev/null
 cp -r /root/backup/.acme.sh /root/ &> /dev/null
 cp -r /root/backup/xray /etc/ &> /dev/null
+cp -r /root/backup/lokasi /etc/ &> /dev/null
 cp -r /root/backup/slowdns /etc/ &> /dev/null
 cp -r /root/backup/per/ /etc/ &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
