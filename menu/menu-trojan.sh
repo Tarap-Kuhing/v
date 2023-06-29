@@ -69,7 +69,7 @@ else
 red "Permission Denied!"
 exit 0
 fi
-#!/bin/bash
+clear
 function add-tr(){
 clear
 ISP=$(cat /etc/lokasi/isp)
@@ -111,7 +111,7 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 echo -e ""
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-hariini=`date -d "0 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#tr '"$user $exp $uuid"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#trojangrpc$/a\#trg '"$user $exp"'\
@@ -214,7 +214,7 @@ user=trial`</dev/urandom tr -dc X-Z-0-9 | head -c4`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 masaaktif=1
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-hariini=`date -d "0 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#tr '"$user $exp $uuid"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#trojangrpc$/a\#trg '"$user $exp"'\
@@ -352,6 +352,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i "s/#tr $user $exp/#tr $user $exp4/g" /etc/xray/config.json
 sed -i "s/#trg $user $exp/#trg $user $exp4/g" /etc/xray/config.json
 clear
@@ -362,6 +363,7 @@ TEXT="
 <b>DOMAIN   :</b> <code>${domain} </code>
 <b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$user </code>
+<b>CERATED  :</b> <code>$harini </code>
 <b>EXPIRED  :</b> <code>$exp4 </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 "
@@ -375,6 +377,7 @@ systemctl restart xray > /dev/null 2>&1
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     echo " Client Name : $user"
+    echo " Created     : $harini"
     echo " Expired On  : $exp4"
     echo ""
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -439,6 +442,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/lokasi/isp)
 CITY=$(cat /etc/lokasi/city)
 domain=$(cat /etc/xray/domain)
+harini=`date -d "0 days" +"%Y-%m-%d"`
 systemctl restart xray
 sleep 1
 echo -n > /tmp/other.txt
@@ -486,6 +490,7 @@ TEXT="
 <b>DOMAIN    :</b> <code>${domain} </code>
 <b>ISP & CITY:</b> <code>$ISP $CITY </code>
 <b>USERNAME  :</b> <code>$akun </code>
+<b>DATE      :</b> <code>$harini </code>
 <b>TOTAL IP  :</b> <code>${jum2} </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
 "
@@ -546,7 +551,7 @@ user=$(grep -E "^#tr " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLI
 domain=$(cat /etc/xray/domain)
 uuid=$(grep -E "^#tr " "/etc/xray/config.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#tr " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
-hariini=`date -d "0 days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
 
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
 trojanlink="trojan://${uuid}@${domain}:443?path=%2Ftrojan-ws&security=tls&host=$sni&type=ws&sni=${domain}#${user}"
