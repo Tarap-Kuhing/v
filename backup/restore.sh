@@ -48,7 +48,7 @@ cp -r /root/backup/slowdns /etc/slowdns &> /dev/null
 cp -r /root/backup/per /etc/per &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
 cp -r /root/backup/lokasi /etc/lokasi &> /dev/null
-cp -r /root/backup/public_html /home/vps/ &> /dev/null
+cp -r /root/backup/public_html /home/vps &> /dev/null
 cp -r /root/backup/crontab /etc/ &> /dev/null
 cp -r /root/backup/cron.d /etc/ &> /dev/null
 systemctl restart xray
