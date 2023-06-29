@@ -12,9 +12,9 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-echo "Silahkan Masukin Link Backupnya"
-read -rp "Link File: " -e url
-wget -O backup.zip "$url"
+echo "Silahkan Masukin Link ID Backup Kamu"
+read -rp "Link File: " -e id
+wget -O backup.zip "https://drive.google.com/u/4/uc?id=${id}&export=download"
 unzip backup.zip
 rm -f backup.zip
 sleep 1
@@ -47,7 +47,7 @@ cp -r /root/backup/xray /etc/xray &> /dev/null
 cp -r /root/backup/slowdns /etc/slowdns &> /dev/null
 cp -r /root/backup/per /etc/per &> /dev/null
 cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
-#cp -r /root/backup/shadowsocksr /usr/local/ &> /dev/null
+cp -r /root/backup/lokasi /etc/lokasi &> /dev/null
 cp -r /root/backup/public_html /home/vps/ &> /dev/null
 cp -r /root/backup/crontab /etc/ &> /dev/null
 cp -r /root/backup/cron.d /etc/ &> /dev/null
