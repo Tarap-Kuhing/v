@@ -289,7 +289,7 @@ menu-vmess
 		fi
 	done
 echo -e ""
-read -p "Masukan uuid: " uuid
+read -p "Masukan (uuid): " uuid
 echo -e ""
 read -p "Expired (days): " masaaktif
 harini=`date -d "0 days" +"%Y-%m-%d"`
@@ -431,12 +431,142 @@ echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu uuid"
 menu-uuid
 }
+function add-trj(){
+clear
+ISP=$(cat /etc/lokasi/isp)
+CITY=$(cat /etc/lokasi/city)
+TIMES="10"
+CHATID=$(cat /etc/per/id)
+KEY=$(cat /etc/per/token)
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
+if [ "$cekray" = "XRAY" ]; then
+domain=`cat /etc/xray/domain`
+else
+domain=`cat /etc/v2ray/domain`
+fi
+tls="$(cat ~/log-install.txt | grep -w "Trojan WS TLS" | cut -d: -f2|sed 's/ //g')"
+ntls="$(cat ~/log-install.txt | grep -w "Trojan WS none TLS" | cut -d: -f2|sed 's/ //g')"
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Trojan Account •             ${NC} $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+
+		read -rp "Username: " -e user
+		user_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
+
+		if [[ ${user_EXISTS} == '1' ]]; then
+clear
+		echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+                echo -e "$COLOR1 ${NC} ${COLBG1}            ${WH}• Add Trojan Account •             ${NC} $COLOR1 $NC"
+                echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+			echo ""
+			echo "A client with the specified name was already created, please choose another name."
+			echo ""
+                        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+			read -n 1 -s -r -p "Press any key to back on menu"
+			menu-trojan
+		fi
+	done
+echo -e ""
+read -p "masukan (uuid): " uuid
+echo -e ""
+read -p "Expired (days): " masaaktif
+exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+harini=`date -d "0 days" +"%Y-%m-%d"`
+sed -i '/#trojanws$/a\#tr '"$user $exp $uuid"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#trojangrpc$/a\#trg '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+
+trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
+trojanlink="trojan://${uuid}@${domain}:443?path=%2Ftrojan-ws&security=tls&host=$sni&type=ws&sni=${domain}#${user}"
+
+trojan1="$(echo $trojanlink1 | base64 -w 0)"
+trojan2="$(echo $trojanlink | base64 -w 0)"
+
+TEXT="
+<code>──────────────────────</code>
+<code>    Xray TROJAN Account</code>
+<code>──────────────────────</code>
+<code>Remarks      : </code> <code>${user}</code>
+<code>Domain       : </code> <code>${domain}</code>
+<code>City         : </code> <code>${CITY}</code>
+<code>ISP          : </code> <code>${ISP}</code>
+<code>Port TLS     : </code> <code>443</code>
+<code>Port none TLS: </code> <code>80,8080</code>
+<code>Port GRPC    : </code> <code>443</code>
+<code>User ID      : </code> <code>${uuid}</code>
+<code>AlterId      : 0</code>
+<code>Security     : auto</code>
+<code>Network      : WS or gRPC</code>
+<code>Path WS      : </code> <code>/trojan-ws</code>
+<code>Path GRPC    : </code> <code>/trojan-grpc</code>
+<code>──────────────────────</code>
+<code>Link TLS     :</code> 
+<code>${trojan2}</code>
+<code>──────────────────────</code>
+<code>Link GRPC    :</code> 
+<code>${trojan1}</code>
+<code>──────────────────────</code>
+<code>Created      : $harini</code>
+<code>──────────────────────</code>
+<code>Expired On   : $exp</code>
+<code>──────────────────────</code>
+"
+
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+
+clear
+clear
+clear
+clear
+systemctl restart xray > /dev/null 2>&1
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC}    ${COLBG1} ${WH}• XRAY TROJAN PREMIUM •              ${NC} $COLOR1 $NC" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Remarks      ${COLOR1}: ${WH}${user}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}ISP          ${COLOR1}: ${WH}$ISP" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}City         ${COLOR1}: ${WH}$CITY" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Host/IP      ${COLOR1}: ${WH}${domain}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port TLS     ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port none TLS${COLOR1}: ${WH}80,8080" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Port gRPC    ${COLOR1}: ${WH}443" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Key          ${COLOR1}: ${WH}${uuid}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Path WS      ${COLOR1}: ${WH}/trojan-ws" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}ServiceName  ${COLOR1}: ${WH}trojan-grpc" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Link TLS     ${COLOR1}: ${WH}${trojanlink}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Link gRPC    ${COLOR1}: ${WH}${trojanlink1}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Created      ${COLOR1}: ${WH}$harini" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} ${WH}Expired On   ${COLOR1}: ${WH}$exp" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo -e "$COLOR1 ${NC} "
+echo -e "$COLOR1┌────────────────────── ${WH}BY${NC} ${COLOR1}───────────────────────┐${NC}"
+echo -e "$COLOR1 ${NC}            ${WH}• TARAP KUHING TUNNELING •              $COLOR1 $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-user.log
+echo "" | tee -a /etc/log-create-user.log
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-uuid
+}
 clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}CREATE ACCOUNT UUID MANUAL ${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}01${BICyan}] UUID ACCOUNT VMESS MANUAL    "
 echo -e "     ${BICyan}[${BIWhite}02${BICyan}] UUID ACCOUNT VLESS MANUAL     "
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] UUID ACCOUNT TROJAN MANUAL    "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
 echo ""
@@ -445,6 +575,7 @@ echo -e ""
 case $opt in
 1) clear ; add-xray ;;
 2) clear ; add-vls ;;
+3) clear ; add-trj ;;
 0) clear ; menu ;;
 x) clear ; menu ;;
 *) echo "anda salah tekan cok" ; sleep 1 ; menu-uuid ;;
