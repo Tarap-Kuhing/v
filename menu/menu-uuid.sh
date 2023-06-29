@@ -253,7 +253,7 @@ clear
 function add-xray(){
 clear
 ISP=$(cat /etc/lokasi/isp)
-CITY=$(cat /etc/loaksi/city)
+CITY=$(cat /etc/lokasi/city)
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
