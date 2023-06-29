@@ -12,7 +12,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-echo "Silahkan Masukin Link ID Backup Kamu"
+echo "\033[0;33m Silahkan Masukin Link ID Backup Kamu \033[0;31m"
 read -rp "Link File: " -e id
 wget -O backup.zip "https://drive.google.com/u/4/uc?id=${id}&export=download"
 unzip backup.zip
