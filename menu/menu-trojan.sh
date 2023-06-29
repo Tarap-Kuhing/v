@@ -107,7 +107,6 @@ clear
 			menu-trojan
 		fi
 	done
-echo -e ""
 uuid=$(cat /proc/sys/kernel/random/uuid)
 echo -e ""
 read -p "Expired (days): " masaaktif
@@ -119,6 +118,7 @@ sed -i '/#trojangrpc$/a\#trg '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=${domain}#${user}"
+trojanlink="trojan://${uuid}@${domain}:443?path=%2Ftrojan-ws&security=tls&host=$sni&type=ws&sni=${domain}#${user}"
 trojanlink="trojan://${uuid}@${domain}:443?path=%2Ftrojan-ws&security=tls&host=$sni&type=ws&sni=${domain}#${user}"
 
 trojan1="$(echo $trojanlink1 | base64 -w 0)"
