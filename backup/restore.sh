@@ -12,27 +12,27 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-echo "\033[0;33m Silahkan Masukin Link ID Backup Kamu \033[0;31m"
-read -rp "Link File: " -e id
+echo "${BLUE} Silahkan Masukin Link ID Backup Kamu ${NC}"
+read -rp "Link ID: " -e id
 wget -O backup.zip "https://drive.google.com/u/4/uc?id=${id}&export=download"
 unzip backup.zip
 rm -f backup.zip
 sleep 1
 echo Start Restore
 cp -r /root/backup/passwd /etc/ &> /dev/null
-echo -e "[ ${GREEN}INFO${NC} ] • Restoring group data..."
+echo -e "[ ${ORANGE}INFO${NC} ] • Restoring group data..."
 sleep 1
 cp -r /root/backup/group /etc/ &> /dev/null
-echo -e "[ ${GREEN}INFO${NC} ] • Restoring shadow data..."
+echo -e "[ ${ORANGE}INFO${NC} ] • Restoring shadow data..."
 sleep 1
 cp -r /root/backup/shadow /etc/ &> /dev/null
-echo -e "[ ${GREEN}INFO${NC} ] • Restoring gshadow data..."
+echo -e "[ ${ORANGE}INFO${NC} ] • Restoring gshadow data..."
 sleep 1
 cp -r /root/backup/gshadow /etc/ &> /dev/null
-echo -e "[ ${GREEN}INFO${NC} ] • Restoring chap-secrets data..."
+echo -e "[ ${ORANGE}INFO${NC} ] • Restoring chap-secrets data..."
 sleep 1
 cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
-echo -e "[ ${GREEN}INFO${NC} ] • Restoring passwd1 data..."
+echo -e "[ ${ORANGE}INFO${NC} ] • Restoring passwd1 data..."
 sleep 1
 #cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
 #echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
