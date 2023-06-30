@@ -109,7 +109,7 @@ cp -r /var/lib/ backup/
 echo -e "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray backup/xray
 cp -r /etc/per backup/per
-echo -e "\033[0;33m Proses Backup Slowdns \033[0m}"
+echo -e "\033[0;33m Proses Backup Slowdns \033[0m"
 cp -r /etc/slowdns backup/slowdns
 cp -r /home/vps/public_html backup/public_html
 cp -r /etc/cron.d /root/backup/cron.d
