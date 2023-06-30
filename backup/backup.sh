@@ -101,22 +101,21 @@ clear
 echo -e "\033[0;33m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
-cp -r /root/.acme.sh /root/backup/ &> /dev/null
-cp -r /etc/passwd /root/backup/ &> /dev/null
-cp -r /etc/group /root/backup/ &> /dev/null
-cp -r /etc/shadow /root/backup/ &> /dev/null
-cp -r /etc/gshadow /root/backup/ &> /dev/null
-cp -r /etc/ppp/chap-secrets /root/backup/chap-secrets &> /dev/null
-cp -r /var/lib/ /root/backup &> /dev/null
-cp -r /etc/xray /root/backup/xray &> /dev/null
-cp -r /etc/lokasi /root/backup/lokasi &> /dev/null
-cp -r /etc/per /root/backup/per &> /dev/null
-cp -r /etc/slowdns backup/slowdns &> /dev/null
-cp -r /etc/nginx/conf.d /root/backup/conf.d/ &> /dev/null
-cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
-cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
-cp -r /etc/crontab /root/backup/crontab &> /dev/null
-
+cp /etc/passwd backup/
+cp /etc/group backup/
+cp /etc/shadow backup/
+cp /etc/gshadow backup/
+cp -r /etc/wireguard backup/wireguard
+cp /etc/ppp/chap-secrets backup/chap-secrets
+cp /etc/ipsec.d/passwd backup/passwd1
+cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
+cp -r /var/lib/ backup/
+cp -r /etc/xray backup/xray
+cp -r /etc/per backup/per
+cp -r /etc/slowdns backup/slowdns
+cp -r /etc/trojan-go backup/trojan-go
+cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
+cp -r /home/vps/public_html backup/public_html
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
@@ -127,7 +126,7 @@ link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 TEXT="
 <code>===========================</code>
 <code>      Detail Backup    </code>
-<code>===========BY==============</code>
+<code>==========================</code>
 <code>  TARAP KUHING TUNNELING </code>
 <code>===========================</code>
 <code>DOMAIN        : ${domain}</code>
@@ -162,13 +161,13 @@ echo -e "
  TARAP KUHING TUNNELING { T.K.T }
 ==================================
 IP VPS        : $IP
-Link Backup   : $id
+Link ID Backup   : $id
 Tanggal       : $date
 ==================================
 "
-echo "Cek Email Kamu Link ID Backup Sudah Dikirim"
-echo "               Atau  "
-echo "Copy Link ID Di Atas Dan Restore Di VPS Baru"
+echo "${BLUE} Cek Email Kamu Link ID Backup Sudah Dikirim ${NC}"
+echo "${PURPLE}               Atau  ${NC}"
+echo "${BLUE} Copy Link ID Di Atas Dan Restore Di VPS Baru ${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
