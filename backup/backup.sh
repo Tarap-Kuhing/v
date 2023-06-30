@@ -91,7 +91,7 @@ date=$(date +"%Y-%m-%d")
 clear
 email=$(cat /root/email)
 if [[ "$email" = "" ]]; then
-echo "Masukkan Email Untuk Menerima Backup"
+echo -e "${YELLOW} Masukkan Email Untuk Menerima Backup ${NC}"
 read -rp "Email : " -e email
 cat <<EOF>>/root/email
 $email
@@ -101,17 +101,12 @@ clear
 echo -e "\033[0;33m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
-cp /etc/passwd backup/
-cp /etc/group backup/
-cp /etc/shadow backup/
-cp /etc/gshadow backup/
-cp -r /var/lib/ backup/
-echo "\033[0;33m Proses Backup Xray \033[0m"
+#cp -r /var/lib/ backup/
+echo -e "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray backup/xray
 cp -r /etc/per backup/per
-echo "\033[0;33m Proses Backup Slowdns \033[0m}"
+echo -e "\033[0;33m Proses Backup Slowdns \033[0m}"
 cp -r /etc/slowdns backup/slowdns
-cp -r /etc/trojan-go backup/trojan-go
 cp -r /home/vps/public_html backup/public_html
 cp -r /etc/cron.d /root/backup/cron.d
 cp -r /etc/crontab /root/backup/crontab
