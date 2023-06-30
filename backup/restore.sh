@@ -22,8 +22,8 @@ echo Start Restore
 cd /root/backup
 #cp -r var/lib/
 echo -e "\033[0;34m Proses Restore file \033[0m"
-cp -r per /etc
-echo "\033[0;34m Proses Restore Xray \033[0m"
+cp -r per /etc/
+echo -e "\033[0;34m Proses Restore Xray \033[0m"
 cp -r xray /etc/
 echo -e "\033[0;34m Proses Restore Slowdns \033[0m"
 cp -r slowdns /etc/
