@@ -476,7 +476,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
     read -n 1 -s -r -p "Press any key to back on menu"
     menu-ssws
     clear
-    }
+}
 function delete-ssws(){
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#ss " "/etc/xray/config.json")
