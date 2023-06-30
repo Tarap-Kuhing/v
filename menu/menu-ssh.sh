@@ -175,6 +175,7 @@ TEXT="
 <code>BadVPN UDP      : </code> <code>7100, 7300, 7300</code>
 <code>───────────────────</code>
 <code>SSH UDP         : </code> <code>$domen:1-65535@$Login:$Pass</code>
+<code>───────────────────</code>
 <code>Payload WS      : </code> <code>GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]</code>
 <code>───────────────────</code>
 <code>OpenVPN SSL     : </code> https://$domen:81/ssl.ovpn
@@ -363,7 +364,8 @@ TEXT="
 <code>Proxy Squid     : </code> <code>3128</code>
 <code>BadVPN UDP      : </code> <code>7100, 7300, 7300</code>
 <code>───────────────────</code>
-<code>SSH UDP         :</code> <code>$domen:100-200@$Login:$Pass</code>
+<code>SSH UDP         :</code> <code>$domen:1-65535@$Login:$Pass</code>
+<code>───────────────────</code>
 <code>Payload WS      : </code> <code>GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]</code>
 <code>───────────────────</code>
 <code>OpenVPN SSL     : </code> https://$domen:81/ssl.ovpn
@@ -688,7 +690,8 @@ TEXT="
 <code>Proxy Squid     : </code> <code>3128</code>
 <code>BadVPN UDP      : </code> <code>7100, 7300, 7300</code>
 <code>───────────────────</code>
-<code>SSH UDP         :</code> <code>$domen:100-200@$Login:$Pass</code>
+<code>SSH UDP         :</code> <code>$domen:1-65535@$Login:$Pass</code>
+<code>───────────────────</code>
 <code>Payload WS      : </code> <code>GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]</code>
 <code>───────────────────</code>
 <code>OpenVPN SSL     : </code> https://$domen:81/ssl.ovpn
