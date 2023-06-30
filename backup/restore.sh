@@ -19,40 +19,29 @@ unzip backup.zip
 rm -f backup.zip
 sleep 1
 echo Start Restore
-cp -r /root/backup/passwd /etc/ &> /dev/null
-echo -e "[ ${ORANGE}INFO${NC} ] • Restoring group data..."
-sleep 1
-cp -r /root/backup/group /etc/ &> /dev/null
-echo -e "[ ${ORANGE}INFO${NC} ] • Restoring shadow data..."
-sleep 1
-cp -r /root/backup/shadow /etc/ &> /dev/null
-echo -e "[ ${ORANGE}INFO${NC} ] • Restoring gshadow data..."
-sleep 1
-cp -r /root/backup/gshadow /etc/ &> /dev/null
-echo -e "[ ${ORANGE}INFO${NC} ] • Restoring chap-secrets data..."
-sleep 1
-cp -r /root/backup/chap-secrets /etc/ppp/ &> /dev/null
-echo -e "[ ${ORANGE}INFO${NC} ] • Restoring passwd1 data..."
-sleep 1
-#cp -r /root/backup/passwd1 /etc/ipsec.d/passwd &> /dev/null
-#echo -e "[ ${GREEN}INFO${NC} ] • Restoring ss.conf data..."
-#sleep 1
-#cp -r /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &> /dev/null
-#echo -e "[ ${GREEN}INFO${NC} ] • Restoring admin data..."
-#sleep 1
-cp -r /root/backup /var/lib/ &> /dev/null
-#cp -r /root/backup/wireguard /etc/ &> /dev/null
-cp -r /root/backup/.acme.sh /root/ &> /dev/null
-cp -r /root/backup/xray /etc/xray &> /dev/null
-cp -r /root/backup/slowdns /etc/slowdns &> /dev/null
-cp -r /root/backup/per /etc/per &> /dev/null
-cp -r /root/backup/conf.d /etc/nginx/ &> /dev/null
-cp -r /root/backup/lokasi /etc/lokasi &> /dev/null
-cp -r /root/backup/public_html /home/vps &> /dev/null
-cp -r /root/backup/crontab /etc/ &> /dev/null
-cp -r /root/backup/cron.d /etc/ &> /dev/null
+cd /root/backup
+cp passwd /etc/
+cp group /etc/
+cp shadow /etc/
+cp gshadow /etc/
+#cp -r wireguard /etc/
+cp chap-secrets /etc/ppp/
+cp passwd1 /etc/ipsec.d/passwd
+cp ss.conf /etc/shadowsocks-libev/ss.conf
+cp -r var/lib/
+echo "${BLUE} Proses Restore file ${NC}"
+cp -r per /etc/
+echo "${BLUE} Proses Restore Xray ${NC}"
+cp -r xray /etc/
+echo "${BLUE} Proses Restore Slowdns ${NC}"
+cp -r slowdns /etc/
+cp -r trojan-go /etc/
+#cp -r shadowsocksr /usr/local/
+cp -r public_html /home/vps/
+cp -r cron.d /etc/
+cp -r crontab /etc/
 systemctl restart xray
-
+echo "${BLUE} Proses Restore SELESAI !!!! ${NC}"
 rm -rf /root/backup
 rm -f backup.zip
 echo ""
