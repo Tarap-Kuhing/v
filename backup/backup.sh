@@ -101,7 +101,11 @@ clear
 echo -e "\033[0;33m Mohon Menunggu , Proses Backup sedang berlangsung !!! \033[0m"
 rm -rf /root/backup
 mkdir /root/backup
-#cp -r /var/lib/ backup/
+cp /etc/passwd backup/
+cp /etc/group backup/
+cp /etc/shadow backup/
+cp /etc/gshadow backup/
+cp -r /var/lib/ backup/
 echo -e "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray backup/xray
 cp -r /etc/per backup/per
