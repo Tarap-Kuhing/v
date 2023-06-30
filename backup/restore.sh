@@ -22,11 +22,11 @@ echo Start Restore
 cd /root/backup
 #cp -r var/lib/
 echo -e "\033[0;34m Proses Restore file \033[0m"
-cp -r /backup/per /etc/per
+cp -r per /etc
 echo "\033[0;34m Proses Restore Xray \033[0m"
-cp -r /backup/xray /etc/xray
+cp -r xray /etc/
 echo -e "\033[0;34m Proses Restore Slowdns \033[0m"
-cp -r /backup/slowdns /etc/slowdns
+cp -r slowdns /etc/
 #cp -r shadowsocksr /usr/local/
 cp -r public_html /home/vps/
 cp -r cron.d /etc/
