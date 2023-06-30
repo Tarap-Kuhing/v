@@ -20,14 +20,17 @@ rm -f backup.zip
 sleep 1
 echo Start Restore
 cd /root/backup
-#cp -r var/lib/
+cp passwd /etc/
+cp group /etc/
+cp shadow /etc/
+cp gshadow /etc/
+cp -r var/lib/
 echo -e "\033[0;34m Proses Restore file \033[0m"
 cp -r per /etc/
 echo -e "\033[0;34m Proses Restore Xray \033[0m"
 cp -r xray /etc/
 echo -e "\033[0;34m Proses Restore Slowdns \033[0m"
 cp -r slowdns /etc/
-#cp -r shadowsocksr /usr/local/
 cp -r public_html /home/vps/
 cp -r cron.d /etc/
 cp -r crontab /etc/
