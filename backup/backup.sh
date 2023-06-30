@@ -105,15 +105,11 @@ cp /etc/passwd backup/
 cp /etc/group backup/
 cp /etc/shadow backup/
 cp /etc/gshadow backup/
-cp -r /etc/wireguard backup/wireguard
-cp /etc/ppp/chap-secrets backup/chap-secrets
-cp /etc/ipsec.d/passwd backup/passwd1
-cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
 cp -r /var/lib/ backup/
-echo "${BLUE} Proses Backup Xray ${NC}"
+echo "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray backup/xray
 cp -r /etc/per backup/per
-echo "${BLUE} Proses Backup Slowdns ${NC}"
+echo "\033[0;33m Proses Backup Slowdns \033[0m}"
 cp -r /etc/slowdns backup/slowdns
 cp -r /etc/trojan-go backup/trojan-go
 cp -r /home/vps/public_html backup/public_html
