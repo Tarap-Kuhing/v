@@ -112,8 +112,6 @@ cp -r /etc/per backup/per
 echo -e "\033[0;33m Proses Backup Slowdns \033[0m"
 cp -r /etc/slowdns backup/slowdns
 cp -r /home/vps/public_html backup/public_html
-cp -r /etc/cron.d /root/backup/cron.d
-cp -r /etc/crontab /root/backup/crontab
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
