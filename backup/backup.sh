@@ -164,9 +164,9 @@ Link ID Backup   : $id
 Tanggal       : $date
 ==================================
 "
-echo "${BLUE} Cek Email Kamu Link ID Backup Sudah Dikirim ${NC}"
-echo "${PURPLE}               Atau  ${NC}"
-echo "${BLUE} Copy Link ID Di Atas Dan Restore Di VPS Baru ${NC}"
+echo "\033[0;33m Cek Email Kamu Link ID Backup Sudah Dikirim \033[0m"
+echo "\033[0;33m               Atau  ${NC}"
+echo "\033[0;33m Copy Link ID Di Atas Dan Restore Di VPS Baru \033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
