@@ -110,12 +110,15 @@ cp /etc/ppp/chap-secrets backup/chap-secrets
 cp /etc/ipsec.d/passwd backup/passwd1
 cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
 cp -r /var/lib/ backup/
+echo "${BLUE} Proses Backup Xray ${NC}"
 cp -r /etc/xray backup/xray
 cp -r /etc/per backup/per
+echo "${BLUE} Proses Backup Slowdns ${NC}"
 cp -r /etc/slowdns backup/slowdns
 cp -r /etc/trojan-go backup/trojan-go
-cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp -r /home/vps/public_html backup/public_html
+cp -r /etc/cron.d /root/backup/cron.d
+cp -r /etc/crontab /root/backup/crontab
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
