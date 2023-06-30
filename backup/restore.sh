@@ -12,9 +12,9 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-echo "${BLUE} Silahkan Masukin Link ID Backup Kamu ${NC}"
+echo "\033[0;33m Silahkan Masukin Link ID Backup Kamu \033[0m"
 read -rp "Link ID: " -e id
-wget -O backup.zip "https://drive.google.com/u/4/uc?id=${id}&export=download"
+wget https://drive.google.com/u/4/uc?id=${id}&export=download
 unzip backup.zip
 rm -f backup.zip
 sleep 1
@@ -25,15 +25,12 @@ cp group /etc/
 cp shadow /etc/
 cp gshadow /etc/
 #cp -r wireguard /etc/
-cp chap-secrets /etc/ppp/
-cp passwd1 /etc/ipsec.d/passwd
-cp ss.conf /etc/shadowsocks-libev/ss.conf
 cp -r var/lib/
-echo "${BLUE} Proses Restore file ${NC}"
+echo "\033[0;34m Proses Restore file \033[0m"
 cp -r per /etc/
-echo "${BLUE} Proses Restore Xray ${NC}"
+echo "\033[0;34m Proses Restore Xray \033[0m"
 cp -r xray /etc/
-echo "${BLUE} Proses Restore Slowdns ${NC}"
+echo "\033[0;34m Proses Restore Slowdns \033[0m"
 cp -r slowdns /etc/
 cp -r trojan-go /etc/
 #cp -r shadowsocksr /usr/local/
@@ -41,7 +38,7 @@ cp -r public_html /home/vps/
 cp -r cron.d /etc/
 cp -r crontab /etc/
 systemctl restart xray
-echo "${BLUE} Proses Restore SELESAI !!!! ${NC}"
+echo "\033[0;34m Proses Restore SELESAI !!!! \033[0m"
 rm -rf /root/backup
 rm -f backup.zip
 echo ""
