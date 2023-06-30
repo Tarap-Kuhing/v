@@ -259,8 +259,8 @@ sleep 1
 rm -f /root/backup/backup.zip &> /dev/null
 cd
 echo
-read -n 1 -s -r -p "Press any key to certv2ry"
-certv2ray
+read -n 1 -s -r -p "Press any key to menu domain"
+menu-domain
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
