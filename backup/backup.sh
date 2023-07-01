@@ -140,11 +140,11 @@ echo -e "
  TARAP KUHING TUNNELING { T.K.T }
 ==================================
 IP VPS        : $IP
-Link ID Backup   : $id
+Link ID Backup: $id
 Tanggal       : $date
 ==================================
 "
-TEXT="
+message="
 <code>===========================</code>
 <code>      Detail Backup    </code>
 <code>==========================</code>
@@ -159,8 +159,8 @@ TEXT="
 <code>Tanggal       : $date</code>
 <code>===========================</code>
 "
-curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-
+curl -s -X POST "$LINK" \
+-d "chat_id=$CHATID" -d "parse_mode=html" -d "text=$message" >/dev/null 2>&1
 echo -e "\033[0;33m Cek Email Kamu Link ID Backup Sudah Dikirim \033[0m"
 echo -e "\033[0;33m               Atau  ${NC}"
 echo -e "\033[0;33m Copy Link ID Di Atas Dan Restore Di VPS Baru \033[0m"
