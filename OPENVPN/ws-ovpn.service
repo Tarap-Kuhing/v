@@ -1,6 +1,6 @@
 [Unit]
 Description=Websocket-SSH By Tarap-Kuhing
-Documentation=https://cvpn.ovh
+Documentation=https://github.com/Tarap-Kuhing
 After=network.target nss-lookup.target
 
 [Service]
