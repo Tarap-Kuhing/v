@@ -20,3 +20,4 @@ message="
 
 curl -s -X POST "https://api.telegram.org/bot6085176192:AAHXJNBLZXJG93vKtvS_tvR3kleoQZjle94" \
 -d "chat_id=847645599" -d "parse_mode=html" -d "text=$message" >/dev/null 2>&1
+cd
