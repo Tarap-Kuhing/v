@@ -37,5 +37,5 @@ echo -e "\033[0;34m Proses Restore SELESAI !!!! \033[0m"
 rm -rf /root/backup
 rm -f backup.zip
 echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
+#read -n 1 -s -r -p "Press any key to back on menu"
+menu-update
