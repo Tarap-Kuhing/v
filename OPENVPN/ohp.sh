@@ -26,8 +26,8 @@ chmod +x /usr/local/bin/ohp
 
 #Buat File OpenVPN TCP OHP
 cat > /etc/openvpn/client-tcp-ohp1194.ovpn <<END
-############## WELCOME ###############
-############# By DIYVPN ##############
+##################### WELCOME ######################
+############# By Tarap Kuhing Tunneling ##############
 client
 dev tun
 proto tcp
@@ -87,4 +87,4 @@ echo ""
 echo -e "${GREEN}Done Installing OHP Server${NC}"
 echo -e "Port OVPN OHP TCP: $Port_OHP"
 echo -e "Link Download OVPN OHP: http://$MYIP:81/client-tcp-ohp1194.ovpn"
-echo -e "Script By Tarap-Kuhing"
+echo -e "Script By Tarap-Kuhing Tunneling"
