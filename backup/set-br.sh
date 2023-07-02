@@ -48,7 +48,7 @@ wget -O backup "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/bac
 wget -O restore "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/restore.sh"
 wget -O strt "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/strt.sh"
 wget -O limitspeed "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/backup/limitspeed.sh"
-wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/ssh/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/v/main/ssh/xp.sh"
 
 chmod +x autobackup
 chmod +x backup
