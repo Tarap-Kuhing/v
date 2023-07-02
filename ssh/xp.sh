@@ -26,13 +26,13 @@ data=( `cat /etc/xray/config.json | grep '^#&' | cut -d ' ' -f 2 | sort | uniq`)
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#& $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -w "^#vls $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
-sed -i "/^#& $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#& $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vls $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vls $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
 
@@ -41,13 +41,13 @@ data=( `cat /etc/xray/config.json | grep '^#!' | cut -d ' ' -f 2 | sort | uniq`)
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#! $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -w "^#tr $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
-sed -i "/^#! $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#! $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#tr $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
 systemctl restart xray
@@ -57,17 +57,32 @@ data=( `cat /etc/trojan-go/config.json | grep '^#!' | cut -d ' ' -f 2 | sort | u
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#! $user" "/etc/trojan-go/config.json" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -w "^#trg $user" "/etc/trojan-go/config.json" | cut -d ' ' -f 3 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
-sed -i "/^#! $user $exp/,/^},{/d" /etc/trojan-go/config.json
-sed -i "/^#! $user $exp/,/^},{/d" /etc/trojan-go/config.json
+sed -i "/^#trg $user $exp/,/^},{/d" /etc/trojan-go/config.json
+sed -i "/^#trg $user $exp/,/^},{/d" /etc/trojan-go/config.json
 fi
 done
 systemctl restart trojan-go.service
 
+##----- Auto Remove SSH2
+data=( `cat /etc/xray/ssh | grep '^#ssh' | cut -d ' ' -f 2 | sort | uniq`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^#ssh $user" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" -le "0" ]]; then
+sed -i "/^#ssh $user $exp/,/^},{/d" /etc/xray/ssh
+sed -i "/^#ssh $user $exp/,/^},{/d" /etc/xray/ssh
+rm -f /etc/xray/ssh/$user $exp
+fi
+done
 
 ##------ Auto Remove SSH
 hariini=`date +%d-%m-%Y`
