@@ -53,9 +53,6 @@ echo -e "     ${BICyan}[${BIWhite}07${BICyan}] Restart All Service"
 echo -e "     ${BICyan}[${BIWhite}08${BICyan}] Change Banner"
 echo -e "     ${BICyan}[${BIWhite}09${BICyan}] Cek Bandwith"
 echo -e "     ${BICyan}[${BIWhite}10${BICyan}] Setting Auto Reboot"
-echo -e "     ${BICyan}[${BIWhite}11${BICyan}] Update Script"
-echo -e "     ${BICyan}[${BIWhite}12${BICyan}] Menu Bot"
-echo -e "     ${BICyan}[${BIWhite}12${BICyan}] Menu Registrasi Ipvps"
 echo -e ""
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
@@ -73,9 +70,6 @@ case $opt in
 8) clear ; nano /etc/issue.net ; exit ;;
 9) clear ; bw ; exit ;;
 10) clear ; jam ; exit ;;
-11) clear ; menu-update ; exit ;;
-12) clear ; m-bot ; exit ;;
-13) clear ; m-ip ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; menu-set ;;
