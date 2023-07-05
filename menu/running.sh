@@ -90,9 +90,9 @@ wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' |
 #wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # COLOR VALIDATION
 RED='\033[0;31m'
@@ -240,12 +240,13 @@ totalram=$(($total_ram/1024))
 kernelku=$(uname -r)
 
 # WAKTU SEKARANG 
-#harini=`date -d "0 days" +"%d-%m-%Y"`
-#jam=`date -d "0 days" +"%X"`
+harini=`date -d "0 days" +"%d-%m-%Y"`
+jam=`date -d "0 days" +"%X"`
 
 # DNS PATCH
 #tipeos2=$(uname -m)
-
+Name=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
+Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 echo -e ""
@@ -261,6 +262,8 @@ echo -e "❇️ OS Name     : $Tipe"
 echo -e "❇️ Total RAM   : ${totalram}MB"
 echo -e "❇️ Public IP   : $MYIP"
 echo -e "❇️ Domain      : $Domen"
+echo -e "❇️ Client Name : $Name"
+echo -e "❇️ Expired     : $Exp2"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[40;1;37m            ⇱ Service Information ⇲             \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
