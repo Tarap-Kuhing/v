@@ -19,7 +19,7 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhin
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
-cat > /etc/systemd/system/ws-nontls.service << END
+cat > /etc/systemd/system/ws-dropbear.service << END
 [Unit]
 Description=Python Proxy Mod By T A R A P - K U H I N G
 Documentation=https://t.me/@Baung2012
@@ -43,7 +43,7 @@ systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
 
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-ovpn.py
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-ovpn
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
@@ -59,7 +59,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn 2086
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn
 Restart=on-failure
 
 [Install]
@@ -67,8 +67,8 @@ WantedBy=multi-user.target
 END
 
 systemctl daemon-reload
-systemctl enable ws-ovpn
-systemctl restart ws-ovpn
+systemctl enable ws-ovpn.service
+systemctl restart ws-ovpn.service
 
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-stunnel
 chmod +x /usr/local/bin/ws-stunnel
