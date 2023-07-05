@@ -213,6 +213,26 @@ else
    swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# STATUS OHP DROPBEAR
+if [[ $ohp == "running" ]]; then 
+   sohp=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   sohp="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS OHP OpenVPN
+if [[ $ohq == "running" ]]; then 
+   sohq=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   sohq="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# STATUS OHP SSH
+if [[ $ohr == "running" ]]; then 
+   sohr=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   sohr="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 
 
 # TOTAL RAM
@@ -246,7 +266,7 @@ jam=`date -d "0 days" +"%X"`
 # DNS PATCH
 #tipeos2=$(uname -m)
 Name=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $2}')
-Exp=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/kuhing/ip/main/vps | grep $MYIP | awk '{print $3}')
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 echo -e ""
@@ -264,6 +284,7 @@ echo -e "❇️ Public IP   : $MYIP"
 echo -e "❇️ Domain      : $Domen"
 echo -e "❇️ Client Name : $Name"
 echo -e "❇️ Expired     : $Exp2"
+echo -e "❇️ Expired     : $jam & $hariini"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[40;1;37m            ⇱ Service Information ⇲             \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -283,6 +304,9 @@ echo -e "❇️ XRAYS Trojan            :$status_virus_trojan"
 echo -e "❇️ Trojan GO               :$status_trgo"
 echo -e "❇️ Websocket TLS           :$swstls"
 echo -e "❇️ Websocket None TLS      :$swsdrop"
+echo -e "❇️ OHP Dropbear            :$sohp"
+echo -e "❇️ OHP OpenVPN             :$sohq"
+echo -e "❇️ OHP SSH                 :$sohr"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
