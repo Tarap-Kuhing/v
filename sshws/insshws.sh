@@ -31,7 +31,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear.service
 Restart=on-failure
 
 [Install]
@@ -43,11 +43,11 @@ systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
 
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-ovpn
-chmod +x /usr/local/bin/ws-ovpn
+wget -O /usr/local/bin/ws-openvpn https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-openvpn
+chmod +x /usr/local/bin/ws-openvpn
 
 # Installing Service
-cat > /etc/systemd/system/ws-ovpn.service << END
+cat > /etc/systemd/system/ws-openvpn.service << END
 [Unit]
 Description=Python Proxy Mod By T A R A P - K U H I N G
 Documentation=https://t.me/@Baung2012
@@ -59,7 +59,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-openvpn
 Restart=on-failure
 
 [Install]
@@ -67,8 +67,8 @@ WantedBy=multi-user.target
 END
 
 systemctl daemon-reload
-systemctl enable ws-ovpn.service
-systemctl restart ws-ovpn.service
+systemctl enable ws-openvpn.service
+systemctl restart ws-openvpn.service
 
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-stunnel
 chmod +x /usr/local/bin/ws-stunnel
