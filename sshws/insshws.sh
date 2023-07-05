@@ -15,8 +15,8 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
-wget -O /usr/local/bin/ws-dropbear.service https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-dropbear
-chmod +x /usr/local/bin/ws-dropbear.service
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-dropbear
+chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
 cat > /etc/systemd/system/ws-dropbear.service << END
@@ -31,7 +31,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear.service
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-dropbear
 Restart=on-failure
 
 [Install]
