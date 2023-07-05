@@ -15,8 +15,8 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-dropbear
-chmod +x /usr/local/bin/ws-dropbear
+wget -O /usr/local/bin/ws-dropbear.service https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-dropbear
+chmod +x /usr/local/bin/ws-dropbear.service
 
 # Installing Service
 cat > /etc/systemd/system/ws-dropbear.service << END
