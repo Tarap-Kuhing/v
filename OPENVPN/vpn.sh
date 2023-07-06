@@ -81,7 +81,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/Tarap-Kuhing/tarong/main/ssh/vpn.zip
+wget https://raw.githubusercontent.com/Tarap-Kuhing/v/main/OPENVPN/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -119,7 +119,7 @@ comp-lzo
 verb 3
 END
 
-sed -i $MYIP2 /etc/openvpn/tcp.ovpn;
+sed -i $MYIP /etc/openvpn/tcp.ovpn;
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/udp.ovpn <<-END
@@ -137,7 +137,7 @@ comp-lzo
 verb 3
 END
 
-sed -i $MYIP2 /etc/openvpn/udp.ovpn;
+sed -i $MYIP /etc/openvpn/udp.ovpn;
 
 # Buat config client SSL
 cat > /etc/openvpn/ssl.ovpn <<-END
@@ -155,7 +155,7 @@ comp-lzo
 verb 3
 END
 
-sed -i $MYIP2 /etc/openvpn/ssl.ovpn;
+sed -i $MYIP /etc/openvpn/ssl.ovpn;
 
 cd
 # pada tulisan xxx ganti dengan alamat ip address VPS anda
