@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 # Getting
 
 # Download File Ohp
-https://raw.githubusercontent.com/Tarap-Kuhing/tarap/main/sshws/ohpserver-linux32.zip
+https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ohpserver-linux32.zip
 unzip ohpserver-linux32.zip
 chmod +x ohpserver
 cp ohpserver /usr/local/bin/ohpserver
