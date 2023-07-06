@@ -90,9 +90,9 @@ wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' |
 #wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohp=$(systemctl status dropbear-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohq=$(systemctl status openvpn-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+ohr=$(systemctl status ssh-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # COLOR VALIDATION
 RED='\033[0;31m'
