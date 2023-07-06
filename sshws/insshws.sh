@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/ws-dropbear
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Tarap-Kuhing/v/main/sshws/dropbear-ws
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
