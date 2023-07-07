@@ -109,7 +109,7 @@ echo -e ""
 echo -e "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray/config.json backup/xray
 sleep 2
-cp -r /etc/xray/ssh backup/xray
+cp -r /etc/xray/ssh backup/ssh
 sleep 2
 cp -r /etc/per backup/per
 sleep 2
