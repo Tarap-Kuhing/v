@@ -110,9 +110,9 @@ echo -e "\033[0;33m Proses Backup Xray \033[0m"
 cp -r /etc/xray/config.json backup/xray
 sleep 2
 cp -r /etc/xray/ssh backup/xray
-sleep w
+sleep 2
 cp -r /etc/per backup/per
-sleep w
+sleep 2
 echo -e ""
 #echo -e "\033[0;33m Proses Backup Slowdns \033[0m"
 #cp -r /etc/slowdns backup/slowdns
@@ -122,6 +122,22 @@ rclone copy /root/$IP-$date.zip dr:backup/
 url=$(rclone link dr:backup/$IP-$date.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
+message="
+<code>===========================</code>
+<code>      Detail Backup    </code>
+<code>==========================</code>
+<code>  TARAP KUHING TUNNELING </code>
+<code>===========================</code>
+<code>DOMAIN        : ${domain}</code>
+<code>=========================/=</code>
+<code>IP VPS        : ${IP}</code>
+<code>===========================</code>
+<code>Link ID Backup:</code> $id
+<code>===========================</code>
+<code>Tanggal       : $date</code>
+<code>===========================</code>
+"
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 
 echo -e "
 ====================≈===============
@@ -153,21 +169,5 @@ echo -e "\033[0;33m Cek Email Kamu Link ID Backup Sudah Dikirim \033[0m"
 echo -e "\033[0;33m               Atau  ${NC}"
 echo -e "\033[0;33m Copy Link ID Di Atas Dan Restore Di VPS Baru \033[0m"
 echo ""
-message="
-<code>===========================</code>
-<code>      Detail Backup    </code>
-<code>==========================</code>
-<code>  TARAP KUHING TUNNELING </code>
-<code>===========================</code>
-<code>DOMAIN        : ${domain}</code>
-<code>=========================/=</code>
-<code>IP VPS        : ${IP}</code>
-<code>===========================</code>
-<code>Link ID Backup:</code> $id
-<code>===========================</code>
-<code>Tanggal       : $date</code>
-<code>===========================</code>
-"
-curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
