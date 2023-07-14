@@ -90,9 +90,9 @@ wsdrop=$(systemctl status ws-dropbear.service | grep Active | awk '{print $3}' |
 #wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohp=$(systemctl status dropbear-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohq=$(systemctl status openvpn-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-ohr=$(systemctl status ssh-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+#ohp=$(systemctl status dropbear-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+#ohq=$(systemctl status openvpn-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+#ohr=$(systemctl status ssh-ohp.service | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # COLOR VALIDATION
 RED='\033[0;31m'
@@ -213,28 +213,6 @@ else
    swsdrop="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# STATUS OHP DROPBEAR
-if [[ $ohp == "running" ]]; then 
-   sohp=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-   sohp="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
-
-# STATUS OHP OpenVPN
-if [[ $ohq == "running" ]]; then 
-   sohq=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-   sohq="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
-
-# STATUS OHP SSH
-if [[ $ohr == "running" ]]; then 
-   sohr=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-   sohr="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
-
-
 # TOTAL RAM
 total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
@@ -304,9 +282,9 @@ echo -e "❇️ XRAYS Trojan            :$status_virus_trojan"
 echo -e "❇️ Trojan GO               :$status_trgo"
 echo -e "❇️ Websocket TLS           :$swstls"
 echo -e "❇️ Websocket None TLS      :$swsdrop"
-echo -e "❇️ OHP Dropbear            :$sohp"
-echo -e "❇️ OHP OpenVPN             :$sohq"
-echo -e "❇️ OHP SSH                 :$sohr"
+#echo -e "❇️ OHP Dropbear            :$sohp"
+#echo -e "❇️ OHP OpenVPN             :$sohq"
+#echo -e "❇️ OHP SSH                 :$sohr"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
